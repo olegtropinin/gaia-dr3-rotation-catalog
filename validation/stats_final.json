@@ -3,163 +3,217 @@
  "solved": 41842,
  "known_lcdb": 9613,
  "n_test": 4834,
- "tierA_total": 5594,
- "tierB_total": 3727,
- "slow_candidates": 769,
- "tierA_unknown": 3162,
+ "tierA_total": 7911,
+ "tierB_total": 6102,
+ "slow_candidates": 1162,
+ "tierA_unknown": 4465,
  "test_tierA": [
-  1079,
-  1250
+  1540,
+  1753
  ],
  "test_tierB": [
-  473,
-  706
+  595,
+  953
  ],
  "test_all": [
-  2199,
+  2544,
   4834
  ],
  "test_tierA_confusion": {
-  "match": 1079,
-  "other": 156,
+  "match": 1540,
   "double": 11,
-  "half": 4
+  "other": 200,
+  "half": 2
  },
  "test_tierA_bands": {
   "2-10h": [
-   738,
-   845
+   1078,
+   1217
   ],
   "10-30h": [
-   263,
-   308
+   354,
+   407
   ],
   "30-100h": [
-   78,
-   97
+   108,
+   129
   ]
  },
- "test_recall_tierA": 0.491,
+ "test_recall_tierA": 0.605,
  "prob_calibration_test": [
   {
    "bin": [
     0,
     0.3
    ],
-   "n": 2005,
-   "pred": 0.15,
-   "obs": 0.144
+   "n": 1620,
+   "pred": 0.157,
+   "obs": 0.137
   },
   {
    "bin": [
     0.3,
     0.5
    ],
-   "n": 852,
-   "pred": 0.392,
-   "obs": 0.421
+   "n": 769,
+   "pred": 0.39,
+   "obs": 0.412
   },
   {
    "bin": [
     0.5,
     0.7
    ],
-   "n": 679,
-   "pred": 0.595,
-   "obs": 0.66
+   "n": 633,
+   "pred": 0.596,
+   "obs": 0.686
   },
   {
    "bin": [
     0.7,
     0.85
    ],
-   "n": 482,
-   "pred": 0.774,
-   "obs": 0.786
+   "n": 505,
+   "pred": 0.778,
+   "obs": 0.796
   },
   {
    "bin": [
     0.85,
     1.01
    ],
-   "n": 816,
-   "pred": 0.938,
-   "obs": 0.887
+   "n": 1307,
+   "pred": 0.946,
+   "obs": 0.894
   }
  ],
- "dP_over_P_matches_median": 0.00029013946317188227,
- "dP_over_P_matches_p90": 0.0025878666982404445,
+ "dP_over_P_matches_median": 0.00023334337063086726,
+ "dP_over_P_matches_p90": 0.002471883545347174,
  "thresholds": {
-  "double_harm": 1.15,
-  "prob_tune80": 0.4782106540507136,
+  "double_harm": 1.2000000000000002,
+  "prob_tune80": 0.3835676239288977,
   "prob_null": 0.7,
   "max_period_h": 100.0
  },
  "same_data_agreement": {
   "Durech & Hanus 2023 (Gaia DR3)": [
-   3046,
-   3117
+   4241,
+   4287
   ],
   "Cellino 2024 (Gaia DR3)": [
-   2709,
-   2765
+   3336,
+   3402
   ],
   "MacLennan 2026 (Gaia DR3)": [
-   2525,
-   2580
+   3113,
+   3178
   ]
  },
  "independent_agreement": {
   "McNeill 2023 (TESS)": [
-   407,
-   774
+   567,
+   1078
   ],
   "Vavilov & Carry 2025 (TESS)": [
-   589,
-   660
+   830,
+   926
   ],
   "Erasmus 2020 (ATLAS)": [
-   158,
-   228
+   222,
+   334
   ]
  },
  "three_way_test_tierA": {
   "McNeill 2023 TESS": {
-   "n": 332,
-   "ours_vs_lcdb": 302,
-   "theirs_vs_lcdb": 211
+   "n": 447,
+   "ours_vs_lcdb": 411,
+   "theirs_vs_lcdb": 273
   },
   "Vavilov & Carry 2025 TESS": {
-   "n": 362,
-   "ours_vs_lcdb": 320,
-   "theirs_vs_lcdb": 316
+   "n": 487,
+   "ours_vs_lcdb": 435,
+   "theirs_vs_lcdb": 419
   },
   "Erasmus 2020 ATLAS": {
-   "n": 114,
-   "ours_vs_lcdb": 86,
-   "theirs_vs_lcdb": 89
+   "n": 175,
+   "ours_vs_lcdb": 133,
+   "theirs_vs_lcdb": 135
   }
  },
- "new_tierA_vs_6_catalogues": 912,
- "new_tierA_published_elsewhere": 75,
- "new_tierA_novel": 837,
+ "new_tierA_vs_6_catalogues": 1400,
+ "new_tierA_published_elsewhere": 116,
+ "new_tierA_novel": 1284,
  "novel_bands": {
-  "2-10h": 602,
-  "10-30h": 140,
-  "30-100h": 95
+  "2-10h": 977,
+  "10-30h": 201,
+  "30-100h": 106
  },
  "matched_control_tierA": [
-  137,
-  161
+  242,
+  278
  ],
  "null_test": {
   "n": 4000,
-  "pass_at_0.478": 0.0693,
-  "pass_at_0.70": 0.0077
+  "pass_at_tune_thr": 0.1978,
+  "tune_thr": 0.384,
+  "pass_at_0.70": 0.0085
  },
- "pilot42_vs_v2": {
+ "pilot42_vs_v3": {
   "match": 35,
-  "x2_low_reliability": 4,
-  "differs_high": 3
+  "x2": 4,
+  "x0.5": 0,
+  "differs": 3,
+  "absent": 0,
+  "differs_list": [
+   [
+    7699,
+    "low",
+    64.03816,
+    128.32644,
+    ""
+   ],
+   [
+    104169,
+    "low",
+    89.29437,
+    177.78338,
+    ""
+   ],
+   [
+    14372,
+    "low",
+    54.7925,
+    109.31082,
+    ""
+   ],
+   [
+    39932,
+    "high",
+    4.06822,
+    286.66385,
+    ""
+   ],
+   [
+    43014,
+    "low",
+    53.89508,
+    108.06929,
+    ""
+   ],
+   [
+    109412,
+    "high",
+    3.00678,
+    481.40481,
+    ""
+   ],
+   [
+    13686,
+    "high",
+    4.01125,
+    792.09022,
+    ""
+   ]
+  ]
  }
 }

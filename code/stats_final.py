@@ -37,6 +37,38 @@ for name, path, nc, pc in (("McNeill 2023 TESS", "mcneill2023_tess.csv", "Object
     s = [r for r in A_test if int(r["number"]) in ref]
     three[name] = {"n": len(s), "ours_vs_lcdb": sum(map(ok, s)), "theirs_vs_lcdb": sum(abs(ref[int(r["number"])] - float(r["lcdb_period_h"])) / float(r["lcdb_period_h"]) < c.TOL for r in s)}
 novel = list(csv.DictReader(open("new_candidates_A_novel.csv")))
+new6 = list(csv.DictReader(open("new_candidates.csv")))
+_six = set()
+for path, nc, pc in (("cellino2024.csv", "Name", "Prot"), ("maclennan2026.csv", "Number", "Prot"), ("mcneill2023_tess.csv", "Object", "Prot"),
+                     ("vavilov2025_tess.csv", "MPC", "Per"), ("erasmus2020_atlas.csv", "Planet", "Prot")):
+    _six |= set(load(os.path.join(D, "lit", path), nc, pc))
+_six |= {int(l.split("\t")[0]) for l in open(os.path.join(D, "durech2023.tsv"))}
+ctrl = [r for r in A_test if int(r["number"]) not in _six]
+
+
+def null_stats():
+    res = c.load_results(); lc = c.load_lcdb(); tb, model, thr, _ = c.calibrate(res, lc)
+    null = c.load_results("results_null")
+    P = model(np.array([c.features(r, tb) for r in null]))
+    sh = np.array([c.final_period(r, tb) < c.CONF_MAX_P for r in null])
+    return {"n": len(null), "pass_at_tune_thr": round(float((sh & (P >= thr)).mean()), 4), "tune_thr": round(thr, 3),
+            "pass_at_0.70": round(float((sh & (P >= c.CONF_PROB_MIN)).mean()), 4)}
+
+
+def pilot_check():
+    cat = {int(r["number"]): r for r in R}
+    out = {"match": 0, "x2": 0, "x0.5": 0, "differs": 0, "absent": 0, "differs_list": []}
+    for p in csv.DictReader(open("/Users/oleg/work/gaia-asteroid-periods/data/candidates.csv")):
+        n, pp = int(p["number"]), float(p["period_h"])
+        if n not in cat:
+            out["absent"] += 1; continue
+        q = float(cat[n]["period_h"])
+        k = rel(q, pp)
+        k = {"match": "match", "double": "x2", "half": "x0.5"}.get(k, "differs")
+        out[k] += 1
+        if k != "match":
+            out["differs_list"].append([n, p["reliability"], pp, q, cat[n]["tier"]])
+    return out
 out = {
     "targets": 42195, "solved": len(R), "known_lcdb": sum(r["split"] != "unknown" for r in R), "n_test": len(test),
     "tierA_total": sum(r["tier"] == "A" for r in R), "tierB_total": sum(r["tier"] == "B" for r in R),
@@ -50,10 +82,10 @@ out = {
     "same_data_agreement": {k: [v["agree"], v["n"]] for k, v in lit.items() if isinstance(v, dict) and "Gaia" in k},
     "independent_agreement": {k: [v["agree"], v["n"]] for k, v in lit.items() if isinstance(v, dict) and "Gaia" not in k},
     "three_way_test_tierA": three,
-    "new_tierA_vs_6_catalogues": 912, "new_tierA_published_elsewhere": 75, "new_tierA_novel": len(novel),
+    "new_tierA_vs_6_catalogues": len(new6), "new_tierA_published_elsewhere": len(new6) - len(novel), "new_tierA_novel": len(novel),
     "novel_bands": {b: sum(1 for r in novel if lo <= float(r["period_h"]) < hi) for b, (lo, hi) in {"2-10h": (2, 10), "10-30h": (10, 30), "30-100h": (30, 100)}.items()},
-    "matched_control_tierA": [137, 161], "null_test": {"n": 4000, "pass_at_0.478": 0.0693, "pass_at_0.70": 0.0077},
-    "pilot42_vs_v2": {"match": 35, "x2_low_reliability": 4, "differs_high": 3},
+    "matched_control_tierA": [sum(map(ok, ctrl)), len(ctrl)], "null_test": null_stats(),
+    "pilot42_vs_v3": pilot_check(),
 }
 json.dump(out, open("stats_final.json", "w"), indent=1)
 print(json.dumps(out, indent=1))

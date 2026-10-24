@@ -16,10 +16,10 @@ TOL = 0.03
 # signal-free asteroids pass, i.e. at most ~7 % of confident unknowns could be noise; at the TUNE-precision
 # threshold (~0.48) up to 40 %. Chosen from the null test alone, not from TEST.
 CONF_PROB_MIN = 0.70
-# The chi2-curvature error ignores the synodic-sidereal drift of a single-period model (~P/P_orbit ~ 1e-4).
-# Against Durech & Hanus 2023 (sidereal, same data) a systematic term of 2.4e-4 P in quadrature gives
-# median |dP|/sigma = 0.65 (Gaussian: 0.674), identical on odd and even halves.
-SYS_REL_ERR = 2.4e-4
+# The chi2-curvature error ignores residual model error. With the PAB correction (v3) the median |dP/P| against
+# Durech & Hanus 2023 (sidereal, same data) is 3.9e-5 (v2 without PAB: 1.6e-4); a systematic term of 5.5e-5 P in
+# quadrature gives median |dP|/sigma ~0.67 (Gaussian: 0.674) on both halves of a split.
+SYS_REL_ERR = 5.5e-5
 CONF_MAX_P = 100.0   # referees: the 100-1000 h band is 40 % correct, so it is never 'confident' (flag slow_candidate)
 
 

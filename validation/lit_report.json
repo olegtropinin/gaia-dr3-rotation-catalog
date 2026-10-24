@@ -1,136 +1,136 @@
 {
  "Durech & Hanus 2023 (Gaia DR3)": {
-  "n": 3117,
-  "agree": 3046,
+  "n": 4287,
+  "agree": 4241,
   "half": 2,
-  "double": 8,
-  "other": 61,
+  "double": 11,
+  "other": 33,
   "bands": {
    "10-30h": [
-    772,
-    763
+    1030,
+    1023
    ],
    "2-10h": [
-    2130,
-    2071
+    2962,
+    2926
    ],
    "30-100h": [
-    215,
-    212
+    295,
+    292
    ]
   },
-  "agree_rate": 0.977
+  "agree_rate": 0.989
  },
  "Cellino 2024 (Gaia DR3)": {
-  "n": 2765,
-  "agree": 2709,
+  "n": 3402,
+  "agree": 3336,
   "half": 1,
   "double": 0,
-  "other": 55,
+  "other": 65,
   "bands": {
-   "10-30h": [
-    795,
-    794
-   ],
    "2-10h": [
-    1740,
-    1685
+    2155,
+    2094
+   ],
+   "10-30h": [
+    961,
+    957
    ],
    "30-100h": [
-    230,
-    230
+    286,
+    285
+   ]
+  },
+  "agree_rate": 0.981
+ },
+ "MacLennan 2026 (Gaia DR3)": {
+  "n": 3178,
+  "agree": 3113,
+  "half": 1,
+  "double": 0,
+  "other": 64,
+  "bands": {
+   "2-10h": [
+    2004,
+    1944
+   ],
+   "10-30h": [
+    907,
+    903
+   ],
+   "30-100h": [
+    267,
+    266
    ]
   },
   "agree_rate": 0.98
  },
- "MacLennan 2026 (Gaia DR3)": {
-  "n": 2580,
-  "agree": 2525,
-  "half": 1,
-  "double": 0,
-  "other": 54,
-  "bands": {
-   "10-30h": [
-    743,
-    742
-   ],
-   "2-10h": [
-    1620,
-    1566
-   ],
-   "30-100h": [
-    217,
-    217
-   ]
-  },
-  "agree_rate": 0.979
- },
  "McNeill 2023 (TESS)": {
-  "n": 774,
-  "agree": 407,
-  "half": 10,
+  "n": 1078,
+  "agree": 567,
+  "half": 12,
   "double": 2,
-  "other": 355,
+  "other": 497,
   "bands": {
    "10-30h": [
-    203,
-    116
+    249,
+    141
    ],
    "2-10h": [
-    510,
-    265
+    747,
+    380
    ],
    "30-100h": [
-    61,
-    26
+    82,
+    46
    ]
   },
   "agree_rate": 0.526
  },
  "Vavilov & Carry 2025 (TESS)": {
-  "n": 660,
-  "agree": 589,
-  "half": 9,
-  "double": 10,
-  "other": 52,
+  "n": 926,
+  "agree": 830,
+  "half": 8,
+  "double": 14,
+  "other": 74,
   "bands": {
    "10-30h": [
-    167,
-    149
+    202,
+    181
    ],
    "2-10h": [
-    443,
-    400
+    651,
+    589
    ],
    "30-100h": [
-    50,
-    40
+    73,
+    60
    ]
   },
-  "agree_rate": 0.892
+  "agree_rate": 0.896
  },
  "Erasmus 2020 (ATLAS)": {
-  "n": 228,
-  "agree": 158,
+  "n": 334,
+  "agree": 222,
   "half": 0,
   "double": 0,
-  "other": 70,
+  "other": 112,
   "bands": {
    "10-30h": [
-    55,
-    38
+    73,
+    48
    ],
    "2-10h": [
-    156,
-    108
+    239,
+    158
    ],
    "30-100h": [
-    17,
-    12
+    22,
+    16
    ]
   },
-  "agree_rate": 0.693
+  "agree_rate": 0.665
  },
- "confident_total": 5594,
- "confident_not_in_any_catalogue": 912
+ "confident_total": 7911,
+ "confident_not_in_any_catalogue": 1400
 }

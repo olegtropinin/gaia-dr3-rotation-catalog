@@ -3,26 +3,26 @@
  "n_known_lcdb_u2plus": 9613,
  "n_tune": 4779,
  "n_test": 4834,
- "double_harm_threshold": 1.15,
- "prob_threshold": 0.4782106540507136,
- "tune_all_match_rate": 0.4415149612889726,
- "test_all_match_rate": 0.4549027720314439,
- "test_confident": 1250,
- "test_confident_correct": 1079,
- "test_confident_precision": 0.8632,
- "test_recall_of_correct": 0.4906775807185084,
+ "double_harm_threshold": 1.2000000000000002,
+ "prob_threshold": 0.3835676239288977,
+ "tune_all_match_rate": 0.5216572504708098,
+ "test_all_match_rate": 0.526272238311957,
+ "test_confident": 1753,
+ "test_confident_correct": 1540,
+ "test_confident_precision": 0.8784940102681118,
+ "test_recall_of_correct": 0.6053459119496856,
  "test_bands_confident": {
   "2-10h": {
-   "n": 845,
-   "correct": 738
+   "n": 1217,
+   "correct": 1078
   },
   "10-30h": {
-   "n": 308,
-   "correct": 263
+   "n": 407,
+   "correct": 354
   },
   "30-100h": {
-   "n": 97,
-   "correct": 78
+   "n": 129,
+   "correct": 108
   }
  }
 }

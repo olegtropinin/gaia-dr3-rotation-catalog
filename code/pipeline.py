@@ -8,6 +8,8 @@ import argparse, json, os, sys, time
 from multiprocessing import Pool
 import numpy as np
 import geom, nbody, period2
+if os.environ.get("PIPELINE_PAB"):
+    import period3 as period2   # v3: PAB-corrected rotational phase
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.path.join(HERE, os.environ.get("PIPELINE_RESULTS", "results"))
@@ -29,7 +31,7 @@ def work(args):
         if prep is None:
             return {"num": int(num), "skip": "too few transits after clipping"}
         if NULL_SEED is not None:
-            t, y, w, base = prep
+            t, y, w, base, *extra = prep      # v3 also returns the PAB longitude
             sw = np.sqrt(w)
             c, *_ = np.linalg.lstsq(base * sw[:, None], y * sw, rcond=None)
             fit = base @ c
@@ -39,7 +41,7 @@ def work(args):
             for s_ in np.unique(season):           # shuffle residuals within each season: keeps sampling, errors and season levels
                 m = np.where(season == s_)[0]
                 res[m] = res[rng.permutation(m)]
-            prep = (t, fit + res, w, base)
+            prep = (t, fit + res, w, base, *extra)
         res = period2.search(*prep)
         res["num"] = int(num)
         return res
@@ -107,7 +109,14 @@ def main():
             r = np.linalg.norm(rh, axis=1)
             cosa = np.sum(-rh * (gb - ast), axis=1) / (r * d)
             alpha = np.degrees(np.arccos(np.clip(cosa, -1, 1)))
-            jobs.append((nums[k], (T["mag"][s:s + n].astype(float), T["rel_err"][s:s + n].astype(float), r, d, alpha, t)))
+            arrays = (T["mag"][s:s + n].astype(float), T["rel_err"][s:s + n].astype(float), r, d, alpha, t)
+            if os.environ.get("PIPELINE_PAB"):
+                # phase-angle bisector in ecliptic longitude (ICRF -> ecliptic, obliquity 23.4393 deg)
+                bis = rh / r[:, None] + (ast - gb) / d[:, None]
+                eps = np.radians(23.4393)
+                ye = bis[:, 1] * np.cos(eps) + bis[:, 2] * np.sin(eps)
+                arrays = arrays + (np.degrees(np.arctan2(ye, bis[:, 0])),)
+            jobs.append((nums[k], arrays))
         t1 = time.time()
         with Pool(a.workers) as pool:
             results = pool.map(work, jobs, chunksize=8)
