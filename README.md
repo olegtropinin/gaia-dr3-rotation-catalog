@@ -127,6 +127,34 @@ catalogues below. Tier A is correct for **185/205 = 90 %** of them.
 
 The top bin is somewhat overconfident.
 
+## Injection-recovery
+
+Synthetic double-peaked lightcurves were injected into the real Gaia sampling of 4,000 asteroids without a
+known period. Each lightcurve has:
+- a period of 2-100 h, log-uniform;
+- an amplitude of 0.1-0.6 mag, scaled per season by 0.5-1 to mimic aspect changes;
+- a random spin sense, with the phase drifting with the PAB.
+
+Two noise models bracket reality: the object's own residuals permuted (pessimistic, since they still contain
+its scrambled real lightcurve) and Gaussian noise at the quoted errors (optimistic).
+
+| | Permuted noise | Gaussian noise |
+|---|---|---|
+| tier-A precision | **96.5 %** (109/113) | **99.3 %** (567/571) |
+| tier-A completeness | 2.7 % | 14 % |
+| P/2 or 2P errors in tier A | 0 | 0 |
+| spin sense correct (correct tier-A periods) | 96 % | 97 % |
+| completeness, amplitude >= 0.45 mag | 7 % | 34 % |
+| completeness, amplitude < 0.2 mag | 0 % | 0 % |
+
+The fraction of real unknown asteroids that reach tier A (10.5 %) falls between the two completeness values.
+
+Tier A is a high-precision, low-completeness selection:
+- it recovers mostly high-amplitude rotators with many transits;
+- it misses almost all low-amplitude ones;
+- its precision on injections (96-99 %) is above its precision against LCDB (89 %). This agrees with the
+  error anatomy below: part of the LCDB disagreement is error in LCDB.
+
 ## Spin sense
 
 The sense picked by the PAB fit agrees with the hemisphere of published poles. Poles within 20 deg of
@@ -214,7 +242,8 @@ excludes aliasing.
   should be 2. A variant that also tries coefficient 2 raised TEST tier-A precision only from 89.3 % to
   89.7 %. It is deferred to DR4.
 - **Slow rotators and tumblers** are outside the model.
-- **Injection-recovery** on real Gaia epochs has not been done yet.
+- **Completeness is low and depends on amplitude** (injection-recovery above). The catalogue is not
+  suited to population statistics without a selection-function correction.
 - **Pilot candidates.** Of the 42 in the pilot note:
   - 35 agree with v3;
   - v3 doubles the period of 4 that were flagged "low";

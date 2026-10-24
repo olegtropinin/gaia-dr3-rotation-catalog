@@ -1,0 +1,127 @@
+{
+ "n": 4000,
+ "all_correct": 0.632,
+ "tierA_n": 571,
+ "tierA_precision": 0.993,
+ "tierA_completeness": 0.142,
+ "tierA_errors": {
+  "P/2": 0,
+  "2P": 0,
+  "other": 4
+ },
+ "sense_correct_among_tierA_correct": 0.974,
+ "by_amplitude": [
+  {
+   "bin": [
+    0.1,
+    0.2
+   ],
+   "n": 829,
+   "completeness": 0.0,
+   "precision": null
+  },
+  {
+   "bin": [
+    0.2,
+    0.3
+   ],
+   "n": 807,
+   "completeness": 0.02,
+   "precision": 1.0
+  },
+  {
+   "bin": [
+    0.3,
+    0.45
+   ],
+   "n": 1189,
+   "completeness": 0.13,
+   "precision": 1.0
+  },
+  {
+   "bin": [
+    0.45,
+    0.61
+   ],
+   "n": 1175,
+   "completeness": 0.337,
+   "precision": 0.99
+  }
+ ],
+ "by_period_h": [
+  {
+   "bin": [
+    2,
+    5
+   ],
+   "n": 943,
+   "completeness": 0.2,
+   "precision": 0.995
+  },
+  {
+   "bin": [
+    5,
+    10
+   ],
+   "n": 691,
+   "completeness": 0.155,
+   "precision": 0.973
+  },
+  {
+   "bin": [
+    10,
+    30
+   ],
+   "n": 1132,
+   "completeness": 0.162,
+   "precision": 1.0
+  },
+  {
+   "bin": [
+    30,
+    100.1
+   ],
+   "n": 1234,
+   "completeness": 0.071,
+   "precision": 1.0
+  }
+ ],
+ "by_n_transits": [
+  {
+   "bin": [
+    25,
+    30
+   ],
+   "n": 1595,
+   "completeness": 0.07,
+   "precision": 0.974
+  },
+  {
+   "bin": [
+    30,
+    40
+   ],
+   "n": 1626,
+   "completeness": 0.156,
+   "precision": 0.996
+  },
+  {
+   "bin": [
+    40,
+    60
+   ],
+   "n": 726,
+   "completeness": 0.251,
+   "precision": 1.0
+  },
+  {
+   "bin": [
+    60,
+    10000
+   ],
+   "n": 53,
+   "completeness": 0.377,
+   "precision": 1.0
+  }
+ ]
+}

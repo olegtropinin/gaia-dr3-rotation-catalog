@@ -152,6 +152,27 @@ The $\chi^2$-curvature errors are too small. Against \citet{Durech2023}, the med
 $3.9\times10^{-5}$. Adding $5.5\times10^{-5}P$ in quadrature gives a median $|\Delta P|/\sigma\approx0.67$. This
 calibration measures agreement between two methods on the same data; it does not include aliasing.
 
+\subsection{Injection--recovery}
+
+I injected synthetic double-peaked lightcurves into the real Gaia sampling of the 4{,}000 null-test
+asteroids. The injected lightcurves had:
+\begin{itemize}
+\item periods of 2--100\,h, log-uniform;
+\item amplitudes of 0.1--0.6\,mag, scaled by 0.5--1 per season;
+\item a random spin sense, with the phase drifting with $\lambda_{\rm PAB}$.
+\end{itemize}
+Two noise models bracket the real case. The pessimistic one uses the object's own permuted residuals; the
+optimistic one uses Gaussian noise at the quoted errors.
+
+In both cases tier~A is precise: 96.5\% (109/113) and 99.3\% (567/571) of its periods are correct. Tier~A
+contains no $P/2$ or $2P$ errors, and the spin sense is right for 96--97\% of the correct periods.
+
+Completeness is low: 2.7\% and 14\%, against 10.5\% of real unknown asteroids reaching tier~A. It rises with
+amplitude and with the number of transits. Amplitudes below 0.2\,mag are never recovered.
+
+Tier~A is therefore a high-precision, low-completeness selection. Without a selection-function correction it
+should not be used for population statistics.
+
 \subsection{Spin senses}
 
 The sense $s$ chosen by the PAB fit agrees with the hemisphere of published poles in three comparisons:
@@ -198,8 +219,7 @@ as ambiguous.
 
 Periods below 2\,h are not searched. The $A_1/A_2$ doubling rule is a heuristic. For doubled periods the PAB
 coefficient should be 2; a variant that also tries 2 improved TEST precision only from 89.3\% to 89.7\%.
-Tumblers fall outside a single-period model, and injection--recovery tests on the real Gaia sampling are still
-to be done.
+Tumblers fall outside a single-period model, and completeness is low for amplitudes below about 0.3\,mag.
 
 DR4 will have about 66 months of data. For it I plan to fit the sidereal period and the pole jointly on a
 coarse pole grid, with a model-based comparison of $P$ and $2P$. Thresholds and null tests will be fixed in

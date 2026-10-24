@@ -53,9 +53,25 @@ def work(args):
                 pos = np.concatenate(blocks)
                 # re-lay the permuted residual sequence over the original positions of the season
                 res[np.sort(pos)] = vals
-            prep = (t, fit + res, w, base, *extra)
+            yn = fit + res
+            if os.environ.get("PIPELINE_INJECT"):
+                # injection-recovery: a double-peaked lightcurve with PAB-drifting phase, amplitude varying
+                # by season (aspect), on top of the object's own permuted residuals (realistic noise)
+                lam = extra[0] if extra else np.zeros(len(t))      # period3.prepare already returns unwrapped radians
+                if os.environ.get("PIPELINE_INJECT") == "gauss":     # optimistic noise: Gaussian at the quoted errors
+                    yn = fit + rng.normal(0, 1 / np.sqrt(w))
+                p_h = float(np.exp(rng.uniform(np.log(2.0), np.log(100.0))))
+                amp = float(rng.uniform(0.1, 0.6)); sense = int(rng.choice([1, -1])); ph0 = rng.uniform(0, 2 * np.pi)
+                seas_amp = rng.uniform(0.5, 1.0, base.shape[1] - 1)[season]
+                phi = 2 * np.pi * 24 / p_h * t - sense * lam + ph0
+                sig = seas_amp * amp / 2 * (np.cos(2 * phi) + 0.15 * np.cos(phi + 1.0))
+                yn = yn + sig
+                inj = {"inj_p": p_h, "inj_amp": amp, "inj_sense": sense}
+            prep = (t, yn, w, base, *extra)
         res = period2.search(*prep)
         res["num"] = int(num)
+        if NULL_SEED is not None and os.environ.get("PIPELINE_INJECT"):
+            res.update(inj)
         return res
     except Exception as e:  # keep the chunk alive; record the failure
         return {"num": int(num), "error": repr(e)[:200]}
