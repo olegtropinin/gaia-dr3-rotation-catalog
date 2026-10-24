@@ -1,0 +1,165 @@
+{
+ "targets": 42195,
+ "solved": 41842,
+ "known_lcdb": 9613,
+ "n_test": 4834,
+ "tierA_total": 5594,
+ "tierB_total": 3727,
+ "slow_candidates": 769,
+ "tierA_unknown": 3162,
+ "test_tierA": [
+  1079,
+  1250
+ ],
+ "test_tierB": [
+  473,
+  706
+ ],
+ "test_all": [
+  2199,
+  4834
+ ],
+ "test_tierA_confusion": {
+  "match": 1079,
+  "other": 156,
+  "double": 11,
+  "half": 4
+ },
+ "test_tierA_bands": {
+  "2-10h": [
+   738,
+   845
+  ],
+  "10-30h": [
+   263,
+   308
+  ],
+  "30-100h": [
+   78,
+   97
+  ]
+ },
+ "test_recall_tierA": 0.491,
+ "prob_calibration_test": [
+  {
+   "bin": [
+    0,
+    0.3
+   ],
+   "n": 2005,
+   "pred": 0.15,
+   "obs": 0.144
+  },
+  {
+   "bin": [
+    0.3,
+    0.5
+   ],
+   "n": 852,
+   "pred": 0.392,
+   "obs": 0.421
+  },
+  {
+   "bin": [
+    0.5,
+    0.7
+   ],
+   "n": 679,
+   "pred": 0.595,
+   "obs": 0.66
+  },
+  {
+   "bin": [
+    0.7,
+    0.85
+   ],
+   "n": 482,
+   "pred": 0.774,
+   "obs": 0.786
+  },
+  {
+   "bin": [
+    0.85,
+    1.01
+   ],
+   "n": 816,
+   "pred": 0.938,
+   "obs": 0.887
+  }
+ ],
+ "dP_over_P_matches_median": 0.00029013946317188227,
+ "dP_over_P_matches_p90": 0.0025878666982404445,
+ "thresholds": {
+  "double_harm": 1.15,
+  "prob_tune80": 0.4782106540507136,
+  "prob_null": 0.7,
+  "max_period_h": 100.0
+ },
+ "same_data_agreement": {
+  "Durech & Hanus 2023 (Gaia DR3)": [
+   3046,
+   3117
+  ],
+  "Cellino 2024 (Gaia DR3)": [
+   2709,
+   2765
+  ],
+  "MacLennan 2026 (Gaia DR3)": [
+   2525,
+   2580
+  ]
+ },
+ "independent_agreement": {
+  "McNeill 2023 (TESS)": [
+   407,
+   774
+  ],
+  "Vavilov & Carry 2025 (TESS)": [
+   589,
+   660
+  ],
+  "Erasmus 2020 (ATLAS)": [
+   158,
+   228
+  ]
+ },
+ "three_way_test_tierA": {
+  "McNeill 2023 TESS": {
+   "n": 332,
+   "ours_vs_lcdb": 302,
+   "theirs_vs_lcdb": 211
+  },
+  "Vavilov & Carry 2025 TESS": {
+   "n": 362,
+   "ours_vs_lcdb": 320,
+   "theirs_vs_lcdb": 316
+  },
+  "Erasmus 2020 ATLAS": {
+   "n": 114,
+   "ours_vs_lcdb": 86,
+   "theirs_vs_lcdb": 89
+  }
+ },
+ "new_tierA_vs_6_catalogues": 912,
+ "new_tierA_published_elsewhere": 75,
+ "new_tierA_novel": 837,
+ "novel_bands": {
+  "2-10h": 602,
+  "10-30h": 140,
+  "30-100h": 95
+ },
+ "matched_control_tierA": [
+  137,
+  161
+ ],
+ "null_test": {
+  "n": 4000,
+  "pass_at_0.478": 0.0693,
+  "pass_at_0.70": 0.0077
+ },
+ "pilot42_vs_v2": {
+  "match": 35,
+  "x2_low_reliability": 4,
+  "differs_high": 3
+ }
+}
