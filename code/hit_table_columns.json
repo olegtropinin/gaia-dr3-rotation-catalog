@@ -1,0 +1,2254 @@
+{
+"J/A+A/596/A40/m35_aste": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Name": {
+"unit": "",
+"desc": "Name of the asteroid"
+},
+"ObsS": {
+"unit": "",
+"desc": "Beginning of observation (BJD-2456700)"
+},
+"ObsE": {
+"unit": "",
+"desc": "End of observation (BJD-2456700)"
+},
+"Length": {
+"unit": "d",
+"desc": "Length of observations"
+},
+"Nobs": {
+"unit": "",
+"desc": "Number of observations"
+},
+"DC": {
+"unit": "",
+"desc": "[0/1] Duty cycle of observations"
+},
+"Rmag": {
+"unit": "mag",
+"desc": "USNO R brightness"
+},
+"l_Per": {
+"unit": "",
+"desc": "Limit flag on Per"
+},
+"Per": {
+"unit": "h",
+"desc": "? Rotational period"
+},
+"e_Per": {
+"unit": "h",
+"desc": "? Error of the rotation period"
+},
+"l_Amp": {
+"unit": "",
+"desc": "Limit flag on Amp"
+},
+"Amp": {
+"unit": "mag",
+"desc": "? Amplitude of variation"
+}
+},
+"J/A+A/596/A40/m35_list": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Name": {
+"unit": "",
+"desc": "Name of the asteroid"
+}
+},
+"J/A+A/596/A40/m35_phot": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Name": {
+"unit": "",
+"desc": "Name of the asteroid"
+},
+"Obs.date": {
+"unit": "d",
+"desc": "Time of observation (BJD-2456700)"
+},
+"Rmag": {
+"unit": "mag",
+"desc": "Brightness, USNO R"
+},
+"e_Rmag": {
+"unit": "mag",
+"desc": "Magnitude error, USNO R"
+}
+},
+"J/A+A/617/A57/table1": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name or designation"
+},
+"Ast": {
+"unit": "",
+"desc": "[*] '*' if there is an inconsistency between P and PLCDB"
+},
+"lambda1": {
+"unit": "deg",
+"desc": "Ecliptic pole longitude (J2000.0) for model 1"
+},
+"beta1": {
+"unit": "deg",
+"desc": "Ecliptic pole latitude (J2000.0) for model 1"
+},
+"lambda2": {
+"unit": "deg",
+"desc": "? Ecliptic pole longitude (J2000.0) for model 2"
+},
+"beta2": {
+"unit": "deg",
+"desc": "? Ecliptic pole latitude (J2000.0) for model 2"
+},
+"P": {
+"unit": "h",
+"desc": "Sidereal period of rotation"
+},
+"PLCDB": {
+"unit": "h",
+"desc": "? Rotation period in the LCDB"
+},
+"U": {
+"unit": "",
+"desc": "? Uncertainty code according to LCDB"
+},
+"N": {
+"unit": "",
+"desc": "Number of photometric points"
+},
+"W1": {
+"unit": "",
+"desc": "? Number of points in W1 band"
+},
+"W2": {
+"unit": "",
+"desc": "? Number of points in W2 band"
+},
+"W3": {
+"unit": "",
+"desc": "? Number of points in W3 band"
+},
+"W4": {
+"unit": "",
+"desc": "? Number of points in W4 band"
+},
+"Method": {
+"unit": "",
+"desc": "Method used for period determination (G1)"
+}
+},
+"J/A+A/631/A2/table1": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name or designation"
+},
+"ELON1": {
+"unit": "deg",
+"desc": "Ecliptic pole longitude (J2000.0) for model 1, lambda1"
+},
+"ELAT1": {
+"unit": "deg",
+"desc": "Ecliptic pole latitude (J2000.0) for model 1, beta1"
+},
+"ELON2": {
+"unit": "deg",
+"desc": "[0/360]? Ecliptic pole longitude (J2000.0) for model 2, lambda2"
+},
+"ELAT2": {
+"unit": "deg",
+"desc": "? Ecliptic pole latitude (J2000.0) for model 2, beta2"
+},
+"P": {
+"unit": "h",
+"desc": "Sidereal period of rotation"
+},
+"l_PLCDB": {
+"unit": "",
+"desc": "Limit flag on PLCDB"
+},
+"PLCDB": {
+"unit": "h",
+"desc": "? Rotation period in the LCDB"
+},
+"u_PLCDB": {
+"unit": "",
+"desc": "[123+- ] Uncertainty code according to LCDB"
+},
+"Note": {
+"unit": "",
+"desc": "? Note according to LCDB"
+},
+"NL": {
+"unit": "",
+"desc": "Number of Lowell photometric points"
+},
+"NG": {
+"unit": "",
+"desc": "Number of Gaia photometric points"
+},
+"Method": {
+"unit": "",
+"desc": "Method used for period determination (1)"
+},
+"_RA.icrs": {
+"unit": "deg",
+"desc": "Right ascension (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)"
+},
+"_DE.icrs": {
+"unit": "deg",
+"desc": "Declination (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)"
+}
+},
+"J/A+A/643/A59/tablea1": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name or designation"
+},
+"lambda1": {
+"unit": "deg",
+"desc": "Ecliptic pole longitude (J2000.0) for model 1"
+},
+"e_lambda1": {
+"unit": "deg",
+"desc": "Uncertainty of lambda1"
+},
+"beta1": {
+"unit": "deg",
+"desc": "Ecliptic pole latitude (J2000.0) for model 1"
+},
+"e_beta1": {
+"unit": "deg",
+"desc": "Uncertainty of beta1"
+},
+"lambda2": {
+"unit": "deg",
+"desc": "? Ecliptic pole longitude (J2000.0) for model 2"
+},
+"e_lambda2": {
+"unit": "deg",
+"desc": "? Uncertainty of lambda2"
+},
+"beta2": {
+"unit": "deg",
+"desc": "? Ecliptic pole latitude (J2000.0) for model 2"
+},
+"e_beta2": {
+"unit": "deg",
+"desc": "? Uncertainty of beta2"
+},
+"P": {
+"unit": "h",
+"desc": "Sidereal period of rotation"
+},
+"e_P": {
+"unit": "h",
+"desc": "Uncertainty of P"
+},
+"l_PLCDB": {
+"unit": "",
+"desc": "Limit flag on PLCDB (G1)"
+},
+"PLCDB": {
+"unit": "h",
+"desc": "? Rotation period in the LCDB (G1)"
+},
+"U": {
+"unit": "",
+"desc": "Uncertainty code according to LCDB (G1)"
+},
+"Note": {
+"unit": "",
+"desc": "Note according to LCDB (G1)"
+},
+"No": {
+"unit": "",
+"desc": "Number of photometric points in o filter"
+},
+"Nc": {
+"unit": "",
+"desc": "Number of photometric points in c filter"
+},
+"o-c": {
+"unit": "mag",
+"desc": "? Color o-c"
+},
+"e_o-c": {
+"unit": "mag",
+"desc": "? Uncertainty of color o-c"
+},
+"Method": {
+"unit": "",
+"desc": "Method used for period determination (G2)"
+}
+},
+"J/A+A/643/A59/tablea3": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name or designation"
+},
+"beta": {
+"unit": "deg",
+"desc": "Ecliptic pole latitude (J2000.0)"
+},
+"e_beta": {
+"unit": "deg",
+"desc": "Uncertainty of beta ({Delta}{beta})"
+},
+"P": {
+"unit": "h",
+"desc": "Sidereal period of rotation"
+},
+"e_P": {
+"unit": "h",
+"desc": "Uncertainty of P"
+},
+"l_PLCDB": {
+"unit": "",
+"desc": "Limit flag on PLCDB (G1)"
+},
+"PLCDB": {
+"unit": "h",
+"desc": "? Rotation period in the LCDB (G1)"
+},
+"U": {
+"unit": "",
+"desc": "Uncertainty code according to LCDB (G1)"
+},
+"Note": {
+"unit": "",
+"desc": "Note according to LCDB (G1)"
+},
+"No": {
+"unit": "",
+"desc": "Number of photometric points in o filter"
+},
+"Nc": {
+"unit": "",
+"desc": "Number of photometric points in c filter"
+},
+"o-c": {
+"unit": "mag",
+"desc": "? Color o-c"
+},
+"e_o-c": {
+"unit": "mag",
+"desc": "? Uncertainty of color o-c"
+},
+"Method": {
+"unit": "",
+"desc": "Method used for period determination (G2)"
+}
+},
+"J/A+A/654/A48/lc": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name"
+}
+},
+"J/A+A/654/A48/tablea1": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name"
+},
+"JD": {
+"unit": "d",
+"desc": "Julian date"
+},
+"Vmag": {
+"unit": "mag",
+"desc": "V-band brightness"
+},
+"e_Vmag": {
+"unit": "mag",
+"desc": "Uncertainty in the V-band brightness"
+},
+"Flag": {
+"unit": "",
+"desc": "[0/1] Flag indicating the usage in CI"
+}
+},
+"J/A+A/654/A48/tablea2": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name"
+},
+"Lambda1": {
+"unit": "deg",
+"desc": "Ecliptic longitude of model 1"
+},
+"Beta1": {
+"unit": "deg",
+"desc": "Ecliptic latitude of model 1"
+},
+"Lambda2": {
+"unit": "deg",
+"desc": "? Ecliptic longitude of model 2"
+},
+"Beta2": {
+"unit": "deg",
+"desc": "? Ecliptic latitude of model 2"
+},
+"P": {
+"unit": "h",
+"desc": "Sidereal rotation period"
+},
+"M": {
+"unit": "",
+"desc": "Method(s) used for period determination"
+},
+"N(ASAS-SN)": {
+"unit": "",
+"desc": "Number of ASAS-SN measurements"
+},
+"P(LCDB)": {
+"unit": "h",
+"desc": "? Rotation period from LCDB"
+},
+"Flag(LCDB)": {
+"unit": "",
+"desc": "Validity flag of P(LCDB)"
+},
+"D": {
+"unit": "km",
+"desc": "? Size"
+}
+},
+"J/A+A/654/A48/tablea3": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name"
+},
+"Lambda1": {
+"unit": "deg",
+"desc": "Ecliptic longitude of model 1"
+},
+"Beta1": {
+"unit": "deg",
+"desc": "Ecliptic latitude of model 1"
+},
+"Lambda2": {
+"unit": "deg",
+"desc": "? Ecliptic longitude of model 2"
+},
+"Beta2": {
+"unit": "deg",
+"desc": "? Ecliptic latitude of model 2"
+},
+"P": {
+"unit": "h",
+"desc": "Sidereal rotation period"
+},
+"M": {
+"unit": "",
+"desc": "Method(s) used for period determination"
+},
+"N(ASAS-SN)": {
+"unit": "",
+"desc": "Number of ASAS-SN measurements"
+},
+"P(LCDB)": {
+"unit": "h",
+"desc": "? Rotation period from LCDB"
+},
+"Flag(LCDB)": {
+"unit": "",
+"desc": "Validity flag of P(LCDB)"
+},
+"D": {
+"unit": "km",
+"desc": "? Size"
+},
+"LambdaD1": {
+"unit": "deg",
+"desc": "Ecliptic longitude of DAMIT model 1"
+},
+"BetaD1": {
+"unit": "deg",
+"desc": "Ecliptic latitude of DAMIT model 1"
+},
+"LambdaD2": {
+"unit": "deg",
+"desc": "? Ecliptic longitude of DAMIT model 2"
+},
+"BetaD2": {
+"unit": "deg",
+"desc": "? Ecliptic latitude of DAMIT model 2"
+},
+"PD": {
+"unit": "h",
+"desc": "Sidereal rotation period of DAMIT model"
+}
+},
+"J/A+A/675/A24/table3": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name or designation"
+},
+"lambda1": {
+"unit": "deg",
+"desc": "Ecliptic pole longitude (J2000.0) for model 1"
+},
+"beta1": {
+"unit": "deg",
+"desc": "Ecliptic pole latitude (J2000.0) for model 1"
+},
+"lambda2": {
+"unit": "deg",
+"desc": "? Ecliptic pole longitude (J2000.0) for model 2"
+},
+"beta2": {
+"unit": "deg",
+"desc": "? Ecliptic pole latitude (J2000.0) for model 2"
+},
+"P": {
+"unit": "h",
+"desc": "Sidereal period of rotation"
+},
+"N": {
+"unit": "",
+"desc": "Number of photometric points"
+},
+"Method": {
+"unit": "",
+"desc": "Method used for period determination (1)"
+}
+},
+"J/A+A/679/A56/tableb1": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name/designation"
+},
+"betaP": {
+"unit": "deg",
+"desc": "Ecliptic latitude betaP"
+},
+"deltaBetaP": {
+"unit": "deg",
+"desc": "1/2 of the range in latitude within the multiple pole solutions"
+},
+"P": {
+"unit": "h",
+"desc": "Sidereal rotation period"
+},
+"Camp": {
+"unit": "",
+"desc": "Clan membership (L4 or L5)"
+},
+"NLC": {
+"unit": "",
+"desc": "? Number of dense lightcurves"
+},
+"Napp": {
+"unit": "",
+"desc": "? Number of apparitions"
+},
+"NUSNO": {
+"unit": "",
+"desc": "? Number of measurements in USNO dataset"
+},
+"NCSS": {
+"unit": "",
+"desc": "Number of measurements in CSS dataset"
+},
+"NGAIA": {
+"unit": "",
+"desc": "Number of measurements in GAIA dataset"
+},
+"NASAS": {
+"unit": "",
+"desc": "? Number of measurements in ASAS dataset"
+},
+"NATLAS": {
+"unit": "",
+"desc": "? Number of measurements in ATLAS dataset"
+},
+"NZTF": {
+"unit": "",
+"desc": "? Number of measurements in ZTF dataset"
+},
+"NPTF": {
+"unit": "",
+"desc": "? Number of measurements in PTF dataset"
+},
+"NTESS": {
+"unit": "",
+"desc": "? Number of measurements in TESS dataset"
+}
+},
+"J/A+A/679/A56/tableb2": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Number": {
+"unit": "",
+"desc": "Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name/designation"
+},
+"lambda1": {
+"unit": "deg",
+"desc": "? Ecliptic longitude lambda1"
+},
+"beta1": {
+"unit": "deg",
+"desc": "Ecliptic latitude beta1"
+},
+"lambda2": {
+"unit": "deg",
+"desc": "? Ecliptic longitude lambda2"
+},
+"beta2": {
+"unit": "deg",
+"desc": "? Ecliptic latitude beta2"
+},
+"P": {
+"unit": "h",
+"desc": "Sidereal rotation period"
+},
+"Camp": {
+"unit": "",
+"desc": "Clan membership (L4 or L5)"
+},
+"NLC": {
+"unit": "",
+"desc": "? Number of dense lightcurves"
+},
+"Napp": {
+"unit": "",
+"desc": "? Number of apparitions"
+},
+"NUSNO": {
+"unit": "",
+"desc": "? Number of measurements in USNO dataset"
+},
+"NCSS": {
+"unit": "",
+"desc": "? Number of measurements in CSS dataset"
+},
+"NGAIA": {
+"unit": "",
+"desc": "? Number of measurements in GAIA dataset"
+},
+"NASAS": {
+"unit": "",
+"desc": "? Number of measurements in ASAS dataset"
+},
+"NATLAS": {
+"unit": "",
+"desc": "? Number of measurements in ATLAS dataset"
+},
+"NZTF": {
+"unit": "",
+"desc": "? Number of measurements in ZTF dataset"
+},
+"NPTF": {
+"unit": "",
+"desc": "? Number of measurements in PTF dataset"
+},
+"NTESS": {
+"unit": "",
+"desc": "? Number of measurements in TESS dataset"
+}
+},
+"J/A+A/688/A50/table3": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"MPC": {
+"unit": "",
+"desc": "MPC id number (ID)"
+},
+"Per": {
+"unit": "h",
+"desc": "Wobble period estimate (Wobble_Period)"
+},
+"e_Per": {
+"unit": "h",
+"desc": "? 95% confidence interval in the wobble period estimate (Error_wobble_Period)"
+},
+"Amp": {
+"unit": "mas",
+"desc": "? Wobble amplitude estimate (Wobble_amplitude)"
+},
+"e_Amp": {
+"unit": "mas",
+"desc": "? 95% confidence interval in the wobble amplitude estimate (Error_wobble_amplitude)"
+},
+"Sep1": {
+"unit": "km",
+"desc": "? Estimated mean separation between the primary and the secondary based on the first interval of mass ratio estimated (Separation-1st_int)"
+},
+"e_Sep1": {
+"unit": "km",
+"desc": "? Uncertainty in the estimated separation of the first interval (Error_sepn-1st_int)"
+},
+"Massratio1": {
+"unit": "",
+"desc": "? Mean value of the first interval of mass ratio estimate (Mass_ratio-1st_int)"
+},
+"e_Massratio1": {
+"unit": "",
+"desc": "? Uncertainty in the mass ratio estimate of the first interval (Error_mratio-1st_int)"
+},
+"Sep2": {
+"unit": "km",
+"desc": "? Estimated mean separation between the primary and the secondary based on the second interval of mass ratio estimated (Separation-2nd_int)"
+},
+"e_Sep2": {
+"unit": "km",
+"desc": "? Uncertainty in the estimated separation of the second interval (Error_sepn-2nd_int)"
+},
+"Massratio2": {
+"unit": "",
+"desc": "? Mean value of the second interval of mass ratio estimate (Mass_ratio-2nd_int)"
+},
+"e_Massratio2": {
+"unit": "",
+"desc": "? Uncertainty in the mass ratio estimate of the second interval (Error_mratio-2nd_int)"
+},
+"fTaxonomy": {
+"unit": "",
+"desc": "[0/1]? Flag to identify candidates in which the parameters were obtained taking into account the taxonomic class (1=True) (Flag_taxonomy)"
+},
+"fSNR": {
+"unit": "",
+"desc": "[0/1]? Flag to identify the best candidates with S/N>1 (1=True) (Flag_SNR)"
+},
+"fDoubleSol": {
+"unit": "",
+"desc": "[0/1]? Flag to identify the candidates with two different solutions (1=True) (Flag_Double_solution)"
+},
+"Comment": {
+"unit": "",
+"desc": "Comment on the data (Comment)"
+}
+},
+"J/A+A/703/A302/kepler": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name or provisional designation"
+},
+"Number": {
+"unit": "",
+"desc": "? Minor Planet Center (MPC) number"
+},
+"Per": {
+"unit": "h",
+"desc": "Rotation period from GLS"
+},
+"e_Per": {
+"unit": "h",
+"desc": "1-sigma uncertainty on period"
+},
+"Fap": {
+"unit": "",
+"desc": "GLS false Alarm probability of detected period"
+},
+"Ampl": {
+"unit": "mag",
+"desc": "Peak-to-peak light-curve amplitude"
+},
+"e_Ampl": {
+"unit": "mag",
+"desc": "1-sigma uncertainty on amplitude"
+},
+"DynClass": {
+"unit": "",
+"desc": "Dynamical asteroid class"
+},
+"Taxonomy": {
+"unit": "",
+"desc": "Taxonomic class"
+}
+},
+"J/A+A/710/A27/tablea2": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name (not including number for named asteroids)"
+},
+"P1h": {
+"unit": "h",
+"desc": "Most likely period"
+},
+"E_P1h": {
+"unit": "h",
+"desc": "Most likely period upper uncertainty"
+},
+"e_P1h": {
+"unit": "h",
+"desc": "Most likely period lower uncertainty"
+},
+"P2h": {
+"unit": "h",
+"desc": "? Second most likely period"
+},
+"E_P2h": {
+"unit": "h",
+"desc": "? Second most likely period upper uncertainty"
+},
+"e_P2h": {
+"unit": "h",
+"desc": "? Second most likely period lower uncertainty"
+},
+"P3h": {
+"unit": "h",
+"desc": "? Third most likely period"
+},
+"E_P3h": {
+"unit": "h",
+"desc": "? Third most likely period upper uncertainty"
+},
+"e_P3h": {
+"unit": "h",
+"desc": "? Third most likely period lower uncertainty"
+},
+"Ap2pmag": {
+"unit": "mag",
+"desc": "Peak-to-peak amplitude associated to the most likely period"
+},
+"mag": {
+"unit": "mag",
+"desc": "Fitted magnitude associated to the most likely period"
+},
+"E_mag": {
+"unit": "mag",
+"desc": "Fitted magnitude associated to the most likely period upper uncertainty"
+},
+"e_mag": {
+"unit": "mag",
+"desc": "Fitted magnitude associated to the most likely period lower uncertainty"
+},
+"Ndatapts": {
+"unit": "",
+"desc": "Number of datapoints in the lightcurve"
+},
+"Nmodes": {
+"unit": "",
+"desc": "Number of aliases"
+},
+"Theta": {
+"unit": "",
+"desc": "Phase-dispersion metric"
+},
+"HourRange": {
+"unit": "h",
+"desc": "Time coverage"
+},
+"PhaseCov": {
+"unit": "",
+"desc": "Fraction of the rotation sampled by our data"
+},
+"rchi2mcmc": {
+"unit": "",
+"desc": "Reduced chi-square for the first period"
+}
+},
+"J/AJ/150/75/table4": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"LCNum": {
+"unit": "",
+"desc": "[1/9663] Light-curve identification number (1)"
+},
+"Ast": {
+"unit": "",
+"desc": "[99/400878] Asteroid number (IAU designation)"
+},
+"Year": {
+"unit": "yr",
+"desc": "[9/14] Last two digits of opposition year"
+},
+"Flt": {
+"unit": "",
+"desc": "[1/2] Photometric band (1=Gunn-g, 2=Mould-R)"
+},
+"Nobs": {
+"unit": "",
+"desc": "[20/499] Number of observations in the light-curve"
+},
+"mag": {
+"unit": "mag",
+"desc": "[13.2/20.4] Median apparent magnitude (2)"
+},
+"MJD0": {
+"unit": "d",
+"desc": "Modified Julian Date (MJD) time of first observation"
+},
+"MJD1": {
+"unit": "d",
+"desc": "MJD time of final observation"
+},
+"amin": {
+"unit": "deg",
+"desc": "[0/32] Minimum-observed phase angle ({alpha}_min_)"
+},
+"amax": {
+"unit": "deg",
+"desc": "[0.50/55.3] Maximum-observed phase angle ({alpha}_max_)"
+},
+"Nbin": {
+"unit": "",
+"desc": "[1/13] Number of sampled phase-angle bins of 3-deg width"
+},
+"Q1": {
+"unit": "",
+"desc": "[0/1] Reliability score from machine classifier (from 0=bad to 1=good)"
+},
+"Q2": {
+"unit": "",
+"desc": "[0/1] Manually-assigned reliability flag (0=bad, 1=good)"
+},
+"Q3": {
+"unit": "",
+"desc": "[0/1] Period reliability flag (0=bad, 1=good)"
+},
+"HMag": {
+"unit": "mag",
+"desc": "[7.6/18.9] Absolute magnitude from G12 fit"
+},
+"e_HMag": {
+"unit": "mag",
+"desc": "[0/0.05] Uncertainty in HMag"
+},
+"G12": {
+"unit": "",
+"desc": "[0/1] Phase-function parameter G12 (3)"
+},
+"e_G12": {
+"unit": "",
+"desc": "[-1/1] Uncertainty in G12 (4)"
+},
+"G": {
+"unit": "",
+"desc": "[-0.3/0.7]? Phase-function parameter G (5)"
+},
+"beta": {
+"unit": "mag/deg",
+"desc": "[-1.2/5]? Phase-function parameter {beta} (6)"
+},
+"C": {
+"unit": "mag",
+"desc": "[0/0.8]? Phase-function parameter C (amplitude of the opposition surge) (6)"
+},
+"Amp": {
+"unit": "mag",
+"desc": "[0.02/1.31] Amplitude from G12 fit"
+},
+"Per1": {
+"unit": "h",
+"desc": "[2/1918] Period from G12 fit"
+},
+"e_Per1": {
+"unit": "h",
+"desc": "[0/2717] Uncertainty in Per1"
+},
+"A11": {
+"unit": "mag",
+"desc": "[-0.2/0.2] Fourier coefficient A1,1 from G12 fit"
+},
+"A12": {
+"unit": "mag",
+"desc": "[-0.3/0.2] Fourier coefficient A1,2 from G12 fit"
+},
+"A21": {
+"unit": "mag",
+"desc": "[-0.6/0.6] Fourier coefficient A2,1 from G12 fit"
+},
+"A22": {
+"unit": "mag",
+"desc": "[-0.6/0.6] Fourier coefficient A2,2 from G12 fit"
+},
+"Rpeak": {
+"unit": "",
+"desc": "[0/1] Ratio of two peak heights in folded rotation curve (7)"
+},
+"chi2": {
+"unit": "",
+"desc": "[0.34/3] Reduced chi-squared of the fit ({chi}^2^_red_)"
+},
+"cosmic": {
+"unit": "mag",
+"desc": "[0/0.077] The 'cosmic error' (8)"
+},
+"rms": {
+"unit": "mag",
+"desc": "[0/0.09] Root-mean-square residual of observations with respect to the fit"
+},
+"Per2": {
+"unit": "h",
+"desc": "[1/380]? Reference period (9)"
+},
+"Diam": {
+"unit": "km",
+"desc": "[0.9/133]? Diameter derived from thermal infrared (IR) data (10)"
+},
+"e_Diam": {
+"unit": "km",
+"desc": "[0/4.25]? Uncertainty in Diam"
+},
+"Alb": {
+"unit": "",
+"desc": "[0/0.2]? Bond albedo (11)"
+},
+"e_Alb": {
+"unit": "",
+"desc": "[0/0.0363]? Uncertainty in bond albedo"
+},
+"CI": {
+"unit": "",
+"desc": "[0/1]? Color-based taxonomic index (0=C-type asteroid, 1=S-type asteroid; See Section 6 for details)"
+},
+"PI": {
+"unit": "",
+"desc": "[0/1]? Photometry-based taxonomic index (0=C-type, 1=S-type; See Section 6.3.1 for details)"
+}
+},
+"J/AJ/166/152/3scycle1": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Object": {
+"unit": "",
+"desc": "Minor Planet Center ID"
+},
+"MJD": {
+"unit": "d",
+"desc": "Modified Julian Date of observation"
+},
+"relh": {
+"unit": "h",
+"desc": "Time of observation in hours where earliest observation of a given object is t=0"
+},
+"mag": {
+"unit": "mag",
+"desc": "The instrumental magnitude of the object at this time-stamp (1)"
+},
+"e_mag": {
+"unit": "mag",
+"desc": "Uncertainty in instrumental magnitude"
+}
+},
+"J/ApJS/179/360/table6": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Name": {
+"unit": "",
+"desc": "Object identification"
+},
+"ID": {
+"unit": "",
+"desc": "Burst number"
+},
+"f_ID": {
+"unit": "",
+"desc": "[a-h, ] Note on the burst (1)"
+},
+"OID": {
+"unit": "",
+"desc": "RXTE observational identification, (NNNNN-NN-NN-NNA)"
+},
+"Obs": {
+"unit": "s",
+"desc": "UT year of start time (2)"
+},
+"MJD": {
+"unit": "d",
+"desc": "Modified Julian Date of start time (2)"
+},
+"l_Flux": {
+"unit": "",
+"desc": "Limit flag on Flux"
+},
+"Flux": {
+"unit": "pW.m**-2",
+"desc": "? Peak flux (3)"
+},
+"e_Flux": {
+"unit": "pW.m**-2",
+"desc": "? Uncertainty in Flux (3)"
+},
+"l_Fluence": {
+"unit": "",
+"desc": "Limit flag on Fluence"
+},
+"Fluence": {
+"unit": "nJ.m**-2",
+"desc": "? Burst fluence (5)"
+},
+"e_Fluence": {
+"unit": "nJ.m**-2",
+"desc": "? Uncertainty in Fluence (5)"
+},
+"Exp": {
+"unit": "",
+"desc": "Presence of radius expansion? (6)"
+},
+"l_Rtime": {
+"unit": "",
+"desc": "Limit flag on Rtime"
+},
+"Rtime": {
+"unit": "s",
+"desc": "? Rise time"
+},
+"e_Rtime": {
+"unit": "s",
+"desc": "? Uncertainty in Rtime"
+},
+"Prate": {
+"unit": "ct/s",
+"desc": "? Peak count rate per PCU (proportional counter unit), including persistent emission and background"
+},
+"tau1": {
+"unit": "s",
+"desc": "? Exponential decay constant {tau}_1_"
+},
+"tau2": {
+"unit": "s",
+"desc": "? Exponential decay constant {tau}_2_"
+},
+"Scale": {
+"unit": "s",
+"desc": "? Burst time scale"
+},
+"e_Scale": {
+"unit": "s",
+"desc": "? Uncertainty in Scale"
+},
+"l_Nfluence": {
+"unit": "",
+"desc": "Limit flag on Nfluence"
+},
+"Nfluence": {
+"unit": "",
+"desc": "? Normalized fluence (7)"
+},
+"e_Nfluence": {
+"unit": "",
+"desc": "? Uncertainty in Nfluence"
+},
+"Pflux": {
+"unit": "pW.m**-2",
+"desc": "? Persistent 2.5-25 keV flux level prior to burst (3)"
+},
+"e_Pflux": {
+"unit": "pW.m**-2",
+"desc": "? Uncertainty in Pflux(3)"
+},
+"NPflux": {
+"unit": "pW.m**-2",
+"desc": "? Persistent 2.5-25 keV flux level prior to burst normalized to F_Edd_ (3)"
+},
+"e_NPflux": {
+"unit": "pW.m**-2",
+"desc": "? Uncertainty in NPflux (3)"
+},
+"Scol": {
+"unit": "",
+"desc": "? Soft color prior to burst (4)"
+},
+"e_Scol": {
+"unit": "",
+"desc": "? Uncertainty in Scolor"
+},
+"Hcol": {
+"unit": "",
+"desc": "? Hard color prior to burst (4)"
+},
+"e_Hcol": {
+"unit": "",
+"desc": "? Uncertainty in Hcolor"
+},
+"l_SZ": {
+"unit": "",
+"desc": "Limit flag on SZ"
+},
+"SZ": {
+"unit": "",
+"desc": "? Position on color-color diagram"
+},
+"e_SZ": {
+"unit": "",
+"desc": "? Uncertainty in SZ"
+},
+"Delt": {
+"unit": "h",
+"desc": "? Inferred recurrence time"
+},
+"cbol": {
+"unit": "",
+"desc": "? Correction used to estimate bolometric flux"
+},
+"e_cbol": {
+"unit": "",
+"desc": "? Uncertainty in cbol"
+},
+"alpha": {
+"unit": "",
+"desc": "? Ratio of integrated persistent flux to burst fluence"
+},
+"e_alpha": {
+"unit": "",
+"desc": "? Uncertainty in alpha"
+},
+"Refs": {
+"unit": "",
+"desc": "Previously published analyses, in refs.dat file"
+}
+},
+"J/ApJS/227/20/table3": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Astorb": {
+"unit": "",
+"desc": "Simbad column added by the CDS"
+},
+"ID": {
+"unit": "",
+"desc": "Object identifier (asteroid number or MPC packed format)"
+},
+"f_ID": {
+"unit": "",
+"desc": "Flag(s) on ID (1)"
+},
+"Planet": {
+"unit": "",
+"desc": "? Asteroid number"
+},
+"Name": {
+"unit": "",
+"desc": "Name or preliminary designation if any"
+},
+"a": {
+"unit": "AU",
+"desc": "[1.8/5.2] Semi-major axis"
+},
+"e": {
+"unit": "",
+"desc": "[0/0.4] Eccentricity"
+},
+"i": {
+"unit": "deg",
+"desc": "[0.07/30] Inclination"
+},
+"Omega": {
+"unit": "deg",
+"desc": "Longitude of ascending node"
+},
+"omega": {
+"unit": "deg",
+"desc": "Argument of periapsis"
+},
+"Diam": {
+"unit": "km",
+"desc": "[0.1/60] Diameter"
+},
+"f_Diam": {
+"unit": "",
+"desc": "[w] w = WISE/NEOWISE diameter"
+},
+"Dist": {
+"unit": "AU",
+"desc": "[1.7/5.1] Heliocentric distance"
+},
+"r": {
+"unit": "AU",
+"desc": "[0.7/4.1] Geodesic distance"
+},
+"alpha": {
+"unit": "deg",
+"desc": "[0.2/11] Phase angle"
+},
+"HRMag": {
+"unit": "mag",
+"desc": "[9/22.1] Absolute H_R_ band magnitude"
+},
+"e_HRMag": {
+"unit": "mag",
+"desc": "[0.02/0.7] Uncertainty in HRMag"
+},
+"Nn": {
+"unit": "",
+"desc": "[1/9] Number of nights observed"
+},
+"Ni": {
+"unit": "",
+"desc": "[11/119] Number of images used"
+},
+"PTFmag": {
+"unit": "mag",
+"desc": "[13.8/25.4] PTF R band magnitude"
+},
+"e_PTFmag": {
+"unit": "mag",
+"desc": "[0/0.2] Uncertainty in PTFmag"
+},
+"Per": {
+"unit": "h",
+"desc": "[1/31] Derived rotation period"
+},
+"e_Per": {
+"unit": "h",
+"desc": "[0/79] Uncertainty in Per"
+},
+"Amp": {
+"unit": "mag",
+"desc": "[0.03/2.2] Lightcurve amplitude {Delta}m (2)"
+},
+"U": {
+"unit": "",
+"desc": "[2/3] Rotation period quality code (3)"
+}
+},
+"J/ApJS/242/15/table1": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Seq": {
+"unit": "",
+"desc": "Running sequence number"
+},
+"Planet": {
+"unit": "",
+"desc": "? Asteroid number"
+},
+"OName": {
+"unit": "",
+"desc": "Other name of the object"
+},
+"Name": {
+"unit": "",
+"desc": "Object identifier"
+},
+"JD": {
+"unit": "d",
+"desc": "Julian Date of observation start"
+},
+"Dur": {
+"unit": "",
+"desc": "Observation duration"
+},
+"Hmag": {
+"unit": "mag",
+"desc": "[8/19.5] H magnitude (1)"
+},
+"Vmag": {
+"unit": "mag",
+"desc": "[13.2/21.6] V band magnitude"
+},
+"V-R": {
+"unit": "mag",
+"desc": "[-1/0.4] The (V-R) color index (2)"
+},
+"e_V-R": {
+"unit": "mag",
+"desc": "[0.01/0.3] Uncertainty in V-R"
+},
+"V-I": {
+"unit": "mag",
+"desc": "[-0.5/0.6] The (V-I) color index (2)"
+},
+"e_V-I": {
+"unit": "mag",
+"desc": "[0.01/0.4] Uncertainty in V-I"
+},
+"l_Amp": {
+"unit": "",
+"desc": "[{=>} ] Limit flag on Amp (3)"
+},
+"Amp": {
+"unit": "mag",
+"desc": "[0.02/1.4] Amplitude"
+},
+"e_Amp": {
+"unit": "mag",
+"desc": "[0.02/0.2]? Uncertainty in Amp"
+},
+"l_Per": {
+"unit": "",
+"desc": "[{=>} ] Limit flag on Per (3)"
+},
+"Per": {
+"unit": "min",
+"desc": "[21/659] Rotational period"
+},
+"e_Per": {
+"unit": "min",
+"desc": "[9/233]? Uncertainty in Per"
+},
+"S-type": {
+"unit": "",
+"desc": "[0/1] S-type probability"
+},
+"X-type": {
+"unit": "",
+"desc": "[0/1] X-type probability"
+},
+"C-type": {
+"unit": "",
+"desc": "[0/1] C-type probability"
+},
+"D-type": {
+"unit": "",
+"desc": "[0/0.9] D-type probability"
+},
+"Tax": {
+"unit": "",
+"desc": "Taxonomy (4)"
+},
+"Family": {
+"unit": "",
+"desc": "Family (5)"
+},
+"E18": {
+"unit": "",
+"desc": "Display data from Erasmus+, 2018, J/ApJS/237/19"
+}
+},
+"J/ApJS/254/7/asteroids": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"ID": {
+"unit": "",
+"desc": "[1871/316484] Asteroid identifier"
+},
+"Name": {
+"unit": "",
+"desc": "Name or preliminary designation"
+},
+"Start": {
+"unit": "d",
+"desc": "[7659.5/8370.31] Start date; JD-2450000"
+},
+"End": {
+"unit": "d",
+"desc": "[7669.7/8385] End date; JD-2450000"
+},
+"Int": {
+"unit": "d",
+"desc": "[2.5/21.3] Length of observations"
+},
+"Np": {
+"unit": "",
+"desc": "[122/1022] Number of points"
+},
+"Cycle": {
+"unit": "",
+"desc": "[0.4/0.99] Duty cycle"
+},
+"n_Name": {
+"unit": "",
+"desc": "[*] *: 2001 SC101 is observed in two Campaigns, C16 and C18"
+},
+"Per": {
+"unit": "h",
+"desc": "[5.12/445.73]? Period"
+},
+"e_Per": {
+"unit": "h",
+"desc": "[0.0004/15.8]? Period uncertainty"
+},
+"l_Amp": {
+"unit": "",
+"desc": "Limit flag on Amp"
+},
+"Amp": {
+"unit": "mag",
+"desc": "[0.05/0.964] Amplitude"
+},
+"e_Amp": {
+"unit": "mag",
+"desc": "[0.003/0.23]? Amplitude uncertainty"
+},
+"Node": {
+"unit": "",
+"desc": "Lagrange node"
+},
+"Camp": {
+"unit": "",
+"desc": "Campaign number"
+}
+},
+"J/ApJS/255/4/table2": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"ID": {
+"unit": "",
+"desc": "? Asteroid Number"
+},
+"Name": {
+"unit": "",
+"desc": "Name of asteroid"
+},
+"NPoints": {
+"unit": "",
+"desc": "Number of Data Points"
+},
+"TimeSpan": {
+"unit": "d",
+"desc": "Time Span of Observations"
+},
+"S/N": {
+"unit": "",
+"desc": "S/N"
+},
+"Per": {
+"unit": "h",
+"desc": "Period"
+},
+"e_Per": {
+"unit": "h",
+"desc": "Period uncertainty"
+}
+},
+"J/other/NewA/34.234/catalog": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Name": {
+"unit": "",
+"desc": "Cataclysmic-variable star name"
+},
+"CBname": {
+"unit": "",
+"desc": ""
+},
+"Type": {
+"unit": "",
+"desc": "Cataclysmic-variable type (see e.g. B/cv)"
+},
+"Porb": {
+"unit": "h",
+"desc": "[1.4/12] Orbital period"
+},
+"GLON": {
+"unit": "deg",
+"desc": "Galactic longitude"
+},
+"GLAT": {
+"unit": "deg",
+"desc": "Galactic latitude"
+},
+"E(B-V)": {
+"unit": "mag",
+"desc": "B-V colour excess"
+},
+"Jmag": {
+"unit": "mag",
+"desc": "[9.1/17]? 2MASS J magnitude"
+},
+"e_Jmag": {
+"unit": "mag",
+"desc": "[0.02/0.17]? rms uncertainty on Jmag"
+},
+"J-Ks": {
+"unit": "mag",
+"desc": "[0.1/1.1] 2MASS J-Ks colour index"
+},
+"e_J-Ks": {
+"unit": "mag",
+"desc": "[0.02/0.34]? rms uncertainty on J-Ks"
+},
+"Ks-W1": {
+"unit": "mag",
+"desc": "Ks-W1 2MASS-WISE (3.3um) colour index"
+},
+"e_Ks-W1": {
+"unit": "mag",
+"desc": "? rms uncertainty on Ks-W1"
+},
+"JMAG": {
+"unit": "mag",
+"desc": "[2.1/10.5] Absolute J magnitude (1)"
+},
+"Dist": {
+"unit": "pc",
+"desc": "[46/3338] Heliocentric distance"
+},
+"E_Dist": {
+"unit": "pc",
+"desc": "[1/448]? Error on Dist (upper value)"
+},
+"e_Dist": {
+"unit": "pc",
+"desc": "[1/448]? Error on Dist (lower value)"
+},
+"SimbadName": {
+"unit": "",
+"desc": "Simbad column added by the CDS"
+},
+"_RA": {
+"unit": "deg",
+"desc": "Right ascension added by the CDS"
+},
+"_DE": {
+"unit": "deg",
+"desc": "Declination added by the CDS"
+}
+},
+"J/other/PSJ/3.56/tpm-full": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"Asteroid": {
+"unit": "",
+"desc": "Asteroid identification number"
+},
+"Name": {
+"unit": "",
+"desc": "Asteroid name"
+},
+"D": {
+"unit": "km",
+"desc": "Diameter"
+},
+"E_D": {
+"unit": "km",
+"desc": "Upper uncertainty in D"
+},
+"e_D": {
+"unit": "km",
+"desc": "Lower uncertainty in D"
+},
+"Gamma": {
+"unit": "",
+"desc": "Thermal inertia, in J.m^-2^.s^-0.5^.K^-1^ unit"
+},
+"E_Gamma": {
+"unit": "",
+"desc": "Upper uncertainty in Gamm, in J.m^-2^.s^-0.5^.K^-1^ unit"
+},
+"e_Gamma": {
+"unit": "",
+"desc": "Lower uncertainty in Gamm, in J.m^-2^.s^-0.5^.K^-1^ unit"
+},
+"A": {
+"unit": "",
+"desc": "Bond albedo"
+},
+"E_A": {
+"unit": "",
+"desc": "Upper uncertainty in A"
+},
+"e_A": {
+"unit": "",
+"desc": "Lower uncertainty in A"
+},
+"pV": {
+"unit": "",
+"desc": "Visible geometric albedo"
+},
+"E_pV": {
+"unit": "",
+"desc": "Upper uncertainty in pV"
+},
+"e_pV": {
+"unit": "",
+"desc": "Lower uncertainty in pV"
+},
+"theta": {
+"unit": "",
+"desc": "Hapke mean surface slope"
+},
+"chi2": {
+"unit": "",
+"desc": "Reduced {chi}^2^ value of the TPM fit"
+},
+"lambda": {
+"unit": "deg",
+"desc": "Shape model {lambda} value"
+},
+"beta": {
+"unit": "deg",
+"desc": "Shape model {beta} value"
+},
+"f_beta": {
+"unit": "",
+"desc": "[a] Flag on beta (1)"
+},
+"P": {
+"unit": "h",
+"desc": "Sidereal rotational period"
+},
+"Shape": {
+"unit": "",
+"desc": "Shape model reference (2)"
+},
+"ModelID": {
+"unit": "",
+"desc": "Shape model identifier (3)"
+},
+"DenseLC": {
+"unit": "",
+"desc": "Number of dense light curves (4)"
+},
+"TotalLC": {
+"unit": "",
+"desc": "Number of total light curves (4)"
+},
+"numW3": {
+"unit": "",
+"desc": "Number of W3 band thermal flux measurements"
+},
+"W3Sat": {
+"unit": "",
+"desc": "Median saturated pixel fraction in W3 measurements"
+},
+"numW4": {
+"unit": "",
+"desc": "Number of W3 band thermal flux measurements"
+},
+"W4Sat": {
+"unit": "",
+"desc": "Median saturated pixel fraction in W4 measurements"
+},
+"rhel": {
+"unit": "AU",
+"desc": "Median heliocentric distance of thermal flux measurements"
+},
+"H": {
+"unit": "mag",
+"desc": "Absolute H magnitude (5)"
+},
+"G": {
+"unit": "",
+"desc": "Slope (5)"
+},
+"T1": {
+"unit": "",
+"desc": "Tholen 1984 T_1_ taxonomy"
+},
+"T2": {
+"unit": "",
+"desc": "SMASS II T_2_ Taxonomy (6)"
+},
+"Orbit": {
+"unit": "",
+"desc": "Orbit class (7)"
+}
+},
+"VII/91/astdata": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"ID": {
+"unit": "",
+"desc": "ADAS (the Asteroids Data Analysis System) ID"
+},
+"TYPE": {
+"unit": "",
+"desc": "ADAS TYPE"
+},
+"Nsight": {
+"unit": "",
+"desc": "No. of usable sightings"
+},
+"Albedo": {
+"unit": "",
+"desc": "Derived geometric albedo"
+},
+"e_Albedo": {
+"unit": "",
+"desc": "Uncertainty (one-sigma) in derived albedo"
+},
+"Diam": {
+"unit": "km",
+"desc": "Derived diameter"
+},
+"e_Diam": {
+"unit": "km",
+"desc": "Uncertainty (one-sigma) in derived diameter"
+},
+"PPtime1": {
+"unit": "d",
+"desc": "Time of perihelion passage (orbital set 1)"
+},
+"AP1": {
+"unit": "deg",
+"desc": "Argument of perihelion ( ' set 1)"
+},
+"LONn1": {
+"unit": "deg",
+"desc": "Longitude of the ascending node ( ' set 1)"
+},
+"Inclin1": {
+"unit": "deg",
+"desc": "Inclination ( ' set 1)"
+},
+"Eccen1": {
+"unit": "",
+"desc": "Eccentricity ( ' set 1)"
+},
+"Pdist1": {
+"unit": "AU",
+"desc": "Perihelion distance ( ' set 1)"
+},
+"PPtime2": {
+"unit": "d",
+"desc": "Time of perihelion passage (orbital set 2)"
+},
+"AP2": {
+"unit": "deg",
+"desc": "Argument of perihelion ( ' set 2)"
+},
+"LONn2": {
+"unit": "deg",
+"desc": "Longitude of the ascending node ( ' set 2)"
+},
+"Inclin2": {
+"unit": "deg",
+"desc": "Inclination ( ' set 2)"
+},
+"Eccen2": {
+"unit": "",
+"desc": "Eccentricity ( ' set 2)"
+},
+"Pdist2": {
+"unit": "AU",
+"desc": "Perihelion distance ( ' set 2)"
+},
+"Bluemag": {
+"unit": "mag",
+"desc": "Blue absolute magnitude"
+},
+"Slope": {
+"unit": "",
+"desc": "Slope parameter"
+},
+"Phase": {
+"unit": "",
+"desc": "Phase integral"
+},
+"B-V": {
+"unit": "mag",
+"desc": "B-V color"
+},
+"ProbFV": {
+"unit": "",
+"desc": "Probability that flux variation significantly affected the flux measurements (PFV)"
+},
+"MagFV12": {
+"unit": "mag",
+"desc": "Magnitude of flux variation in 12um band"
+},
+"MagFV25": {
+"unit": "mag",
+"desc": "Magnitude of flux variation in 25um band"
+},
+"MagFV60": {
+"unit": "mag",
+"desc": "Magnitude of flux variation in 60um band"
+},
+"MagFV100": {
+"unit": "mag",
+"desc": "Magnitude of flux variation in 100um band"
+},
+"Status": {
+"unit": "",
+"desc": "Composite status word"
+},
+"EphemQ": {
+"unit": "",
+"desc": "Ephemeris quality code"
+},
+"MagQ": {
+"unit": "",
+"desc": "Absolute magnitude quality code"
+},
+"ColorQ": {
+"unit": "",
+"desc": "Color quality code"
+}
+},
+"VII/91/astsight": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"SightT": {
+"unit": "",
+"desc": "SDAS (the Science Data Analysis System) sighting name (time part)"
+},
+"SightD": {
+"unit": "",
+"desc": "SDAS sighting name (detector ID part)"
+},
+"Obsdate": {
+"unit": "",
+"desc": "Observation time, (year-1900)*100+month"
+},
+"Obsday": {
+"unit": "d",
+"desc": "Observation day (UT day and fraction of day)"
+},
+"RArad": {
+"unit": "deg",
+"desc": "Right ascension (geocentric, around 1983.5)"
+},
+"DErad": {
+"unit": "deg",
+"desc": "Declination (geocentric, around 1983.5)"
+},
+"ScanPos": {
+"unit": "rad",
+"desc": "In-scan position uncertainty (one-sigma)"
+},
+"GaussPos": {
+"unit": "rad",
+"desc": "Cross-scan gaussian position uncertainty (one-sigma)"
+},
+"UniPos": {
+"unit": "rad",
+"desc": "Cross-scan uniform position uncertainty (one-sigma)"
+},
+"TWangle": {
+"unit": "rad",
+"desc": "Position twist angle (from north counter- clockwise to cross-scan axis)"
+},
+"Flux12": {
+"unit": "Jy",
+"desc": "Flux density in 12um band"
+},
+"Flux25": {
+"unit": "Jy",
+"desc": "Flux density in 25um band"
+},
+"Flux60": {
+"unit": "Jy",
+"desc": "Flux density in 60um band"
+},
+"Flux100": {
+"unit": "Jy",
+"desc": "Flux density in 100um band"
+},
+"e_Flux12": {
+"unit": "Jy",
+"desc": "Flux density uncertainty (one-sigma) 12um"
+},
+"e_Flux25": {
+"unit": "Jy",
+"desc": "Flux density uncertainty (one-sigma) 25um"
+},
+"e_Flux60": {
+"unit": "Jy",
+"desc": "Flux density uncertainty (one-sigma) 60um"
+},
+"e_Flux100": {
+"unit": "Jy",
+"desc": "Flux density uncertainty (one-sigma) 100um"
+},
+"S/N12": {
+"unit": "",
+"desc": "Signal-to-noise ratio in 12um band"
+},
+"S/N25": {
+"unit": "",
+"desc": "Signal-to-noise ratio in 25um band"
+},
+"S/N60": {
+"unit": "",
+"desc": "Signal-to-noise ratio in 60um band"
+},
+"S/N100": {
+"unit": "",
+"desc": "Signal-to-noise ratio in 100um band"
+},
+"CorrCoef": {
+"unit": "",
+"desc": "Correlation coefficients in each band (packed)"
+},
+"FVstatus": {
+"unit": "",
+"desc": "Flux status words for each survey band (packed)"
+},
+"Dstatus": {
+"unit": "",
+"desc": "Associated data status word"
+},
+"ARstatus": {
+"unit": "",
+"desc": "Acceptance/rejection status word"
+},
+"AlbedoSt": {
+"unit": "",
+"desc": "Albedo determination status word"
+},
+"Confst": {
+"unit": "",
+"desc": "Confusion status word"
+},
+"ASdist": {
+"unit": "AU",
+"desc": "Asteroid-sun distance"
+},
+"AEdist": {
+"unit": "AU",
+"desc": "Asteroid-earth distance"
+},
+"Phase": {
+"unit": "rad",
+"desc": "Phase angle"
+},
+"Vmag": {
+"unit": "mag",
+"desc": "Expected visual magnitude"
+},
+"Diam12": {
+"unit": "km",
+"desc": "Derived diameter in 12um band"
+},
+"Diam25": {
+"unit": "km",
+"desc": "Derived diameter in 25um band"
+},
+"Diam60": {
+"unit": "km",
+"desc": "Derived diameter in 60um band"
+},
+"Diam100": {
+"unit": "km",
+"desc": "Derived diameter in 100um band"
+},
+"e_Diam12": {
+"unit": "km",
+"desc": "? One-sigma uncertainty in DIAM (12um)"
+},
+"e_Diam25": {
+"unit": "km",
+"desc": "? One-sigma uncertainty in DIAM (25um)"
+},
+"e_Diam60": {
+"unit": "km",
+"desc": "? One-sigma uncertainty in DIAM (60um)"
+},
+"e_Diam100": {
+"unit": "km",
+"desc": "? One-sigma uncertainty in DIAM (100um)"
+},
+"Albedo12": {
+"unit": "",
+"desc": "? Derived albedo in 12um band"
+},
+"Albedo25": {
+"unit": "",
+"desc": "? Derived albedo in 25um band"
+},
+"Albedo60": {
+"unit": "",
+"desc": "? Derived albedo in 60um band"
+},
+"Albedo100": {
+"unit": "",
+"desc": "? Derived albedo in 100um band"
+},
+"e_Albedo12": {
+"unit": "",
+"desc": "? One-sigma uncertainty in Albedo (12um)"
+},
+"e_Albedo25": {
+"unit": "",
+"desc": "? One-sigma uncertainty in Albedo (25um)"
+},
+"e_Albedo60": {
+"unit": "",
+"desc": "? One-sigma uncertainty in Albedo (60um)"
+},
+"e_Albedo100": {
+"unit": "",
+"desc": "? One-sigma uncertainty in Albedo (100um)"
+},
+"ID": {
+"unit": "",
+"desc": "ADAS ID"
+},
+"_RA.icrs": {
+"unit": "deg",
+"desc": "Right ascension (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)"
+},
+"_DE.icrs": {
+"unit": "deg",
+"desc": "Declination (ICRS) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)"
+}
+},
+"VII/91/aststats": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"ID": {
+"unit": "",
+"desc": "ADAS ID"
+},
+"Type": {
+"unit": "",
+"desc": "ADAS TYPE"
+},
+"NPsight": {
+"unit": "",
+"desc": "No. of predicted sightings"
+},
+"NSIGHT": {
+"unit": "",
+"desc": "No. of realized sightings"
+},
+"Fsight": {
+"unit": "",
+"desc": "No. of times predicted too faint to detect"
+},
+"Ndead": {
+"unit": "",
+"desc": "No. of times not detected and image crossed over dead band 2 detector"
+},
+"Nnoisy": {
+"unit": "",
+"desc": "No. of times not detected and image crossed over noisy band 2 detector"
+},
+"Nnondet": {
+"unit": "",
+"desc": "No. of times not detected and no likely reason identified for the nondetection"
+}
+},
+"VII/91/nmspoint": {
+"recno": {
+"unit": "",
+"desc": "Record number assigned by the VizieR team. Should Not be used for identification."
+},
+"ID": {
+"unit": "",
+"desc": "ADAS ID"
+},
+"TYPE": {
+"unit": "",
+"desc": "ADAS TYPE"
+},
+"Point": {
+"unit": "",
+"desc": "pointers to files in FPND"
+},
+"AstName": {
+"unit": "",
+"desc": "Asteroid name"
+},
+"PROVIS": {
+"unit": "",
+"desc": "Provisional Designation"
+}
+}
+}

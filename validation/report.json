@@ -7,22 +7,22 @@
  "prob_threshold": 0.3835676239288977,
  "tune_all_match_rate": 0.5216572504708098,
  "test_all_match_rate": 0.526272238311957,
- "test_confident": 1753,
- "test_confident_correct": 1540,
- "test_confident_precision": 0.8784940102681118,
- "test_recall_of_correct": 0.6053459119496856,
+ "test_confident": 1459,
+ "test_confident_correct": 1303,
+ "test_confident_precision": 0.8930774503084304,
+ "test_recall_of_correct": 0.512185534591195,
  "test_bands_confident": {
   "2-10h": {
-   "n": 1217,
-   "correct": 1078
+   "n": 1025,
+   "correct": 926
   },
   "10-30h": {
-   "n": 407,
-   "correct": 354
+   "n": 328,
+   "correct": 289
   },
   "30-100h": {
-   "n": 129,
-   "correct": 108
+   "n": 106,
+   "correct": 88
   }
  }
 }

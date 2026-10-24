@@ -48,11 +48,14 @@ ctrl = [r for r in A_test if int(r["number"]) not in _six]
 
 def null_stats():
     res = c.load_results(); lc = c.load_lcdb(); tb, model, thr, _ = c.calibrate(res, lc)
-    null = c.load_results("results_null")
-    P = model(np.array([c.features(r, tb) for r in null]))
-    sh = np.array([c.final_period(r, tb) < c.CONF_MAX_P for r in null])
-    return {"n": len(null), "pass_at_tune_thr": round(float((sh & (P >= thr)).mean()), 4), "tune_thr": round(thr, 3),
-            "pass_at_0.70": round(float((sh & (P >= c.CONF_PROB_MIN)).mean()), 4)}
+    out = {"tune_thr": round(thr, 3), "tierA_thr": c.CONF_PROB_MIN, "n_solved_unknown": sum(r["num"] not in lc for r in res)}
+    for name, sub in (("white", "results_null"), ("block", "results_null_block")):
+        null = c.load_results(sub)
+        P = model(np.array([c.features(r, tb) for r in null]))
+        sh = np.array([c.final_period(r, tb) < c.CONF_MAX_P for r in null])
+        out[name] = {"n": len(null), "pass_at_tune_thr": round(float((sh & (P >= thr)).mean()), 4),
+                     "pass_at_0.70": round(float((sh & (P >= 0.70)).mean()), 4), "pass_at_tierA": round(float((sh & (P >= c.CONF_PROB_MIN)).mean()), 4)}
+    return out
 
 
 def pilot_check():
@@ -89,3 +92,57 @@ out = {
 }
 json.dump(out, open("stats_final.json", "w"), indent=1)
 print(json.dumps(out, indent=1))
+
+
+def extras():
+    """Referee round-2 checks: LCDB quality, anatomy of the tier-A errors, spin sense vs published poles."""
+    import collections, glob
+    lines = open(os.path.join(D, "lc_summary.csv"), encoding="latin-1").read().splitlines()
+    h = next(i for i, l in enumerate(lines) if l.lower().startswith("number,"))
+    U = {}
+    for r in csv.DictReader(lines[h + 1:], fieldnames=lines[h].split(",")):
+        try: U[int(r["Number"])] = (r["U"] or "").strip()
+        except (TypeError, ValueError): pass
+    q = {}
+    for name, keep in (("U>=3-", ("3", "3-")), ("U=2/2+", ("2", "2+")), ("U=2-", ("2-",))):
+        s = [r for r in A_test if U.get(int(r["number"])) in keep]
+        q[name] = [sum(map(ok, s)), len(s)]
+    va = load(os.path.join(D, "lit", "vavilov2025_tess.csv"), "MPC", "Per")
+    anat = collections.defaultdict(lambda: {"n": 0, "tess_with_us": 0, "tess_with_lcdb": 0, "tess_n": 0})
+    for r in A_test:
+        n, p, l = int(r["number"]), float(r["period_h"]), float(r["lcdb_period_h"])
+        k = "match" if ok(r) else "x2" if rel(p, l) != "other" else "1 c/d alias of LCDB" if abs(abs(48 / p - 48 / l) - 1) < 0.06 else "other"
+        a = anat[k]; a["n"] += 1
+        if n in va:
+            a["tess_n"] += 1; a["tess_with_us"] += abs(p - va[n]) / va[n] < c.TOL; a["tess_with_lcdb"] += abs(l - va[n]) / va[n] < c.TOL
+    raw = {}
+    for f in glob.glob("results/*.jsonl"):
+        for l in open(f):
+            d = json.loads(l); raw[d["num"]] = d
+    tierA = {int(r["number"]) for r in R if r["tier"] == "A"}
+    def sense_agree(poles):
+        t = a = 0
+        for n, bs in poles.items():
+            if n not in tierA or "sense" not in raw.get(n, {}) or len({b > 0 for b in bs}) > 1 or min(abs(b) for b in bs) < 20:
+                continue
+            t += 1; a += (bs[0] > 0) == (raw[n]["sense"] == 1)
+        return [a, t]
+    dhp = collections.defaultdict(list)
+    for r in csv.DictReader(open(os.path.join(D, "durech2023_poles.csv"))):
+        try:
+            dhp[int(r["Number"])] += [float(r["beta1"])] + ([float(r["beta2"])] if r["beta2"].strip() else [])
+        except ValueError: pass
+    ids = {r["id"]: int(r["number"]) for r in csv.DictReader(open(os.path.join(D, "damit_asteroids.csv"), encoding="utf-8-sig")) if r["number"].isdigit()}
+    dmp = collections.defaultdict(list)
+    for r in csv.DictReader(open(os.path.join(D, "damit_models.csv"), encoding="utf-8-sig")):
+        try:
+            if r["asteroid_id"] in ids: dmp[ids[r["asteroid_id"]]].append(float(r["beta"]))
+        except ValueError: pass
+    return {"test_tierA_by_lcdb_quality": q, "test_tierA_anatomy": dict(anat),
+            "spin_sense_vs_durech2023": sense_agree(dhp), "spin_sense_vs_damit": sense_agree(dmp),
+            "spin_sense_vs_damit_not_in_durech": sense_agree({n: b for n, b in dmp.items() if n not in dhp}),
+            "tierA_unknown_with_sense": sum(1 for r in R if r["tier"] == "A" and r["split"] == "unknown")}
+
+
+out.update(extras())
+json.dump(out, open("stats_final.json", "w"), indent=1)

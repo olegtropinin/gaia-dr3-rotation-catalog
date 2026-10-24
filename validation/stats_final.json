@@ -3,43 +3,42 @@
  "solved": 41842,
  "known_lcdb": 9613,
  "n_test": 4834,
- "tierA_total": 7911,
- "tierB_total": 6102,
+ "tierA_total": 6238,
+ "tierB_total": 7775,
  "slow_candidates": 1162,
- "tierA_unknown": 4465,
+ "tierA_unknown": 3390,
  "test_tierA": [
-  1540,
-  1753
+  1303,
+  1459
  ],
  "test_tierB": [
-  595,
-  953
+  832,
+  1247
  ],
  "test_all": [
   2544,
   4834
  ],
  "test_tierA_confusion": {
-  "match": 1540,
-  "double": 11,
-  "other": 200,
-  "half": 2
+  "match": 1303,
+  "other": 150,
+  "double": 6
  },
  "test_tierA_bands": {
   "2-10h": [
-   1078,
-   1217
+   926,
+   1025
   ],
   "10-30h": [
-   354,
-   407
+   289,
+   328
   ],
   "30-100h": [
-   108,
-   129
+   88,
+   106
   ]
  },
- "test_recall_tierA": 0.605,
+ "test_recall_tierA": 0.512,
  "prob_calibration_test": [
   {
    "bin": [
@@ -87,76 +86,87 @@
    "obs": 0.894
   }
  ],
- "dP_over_P_matches_median": 0.00023334337063086726,
- "dP_over_P_matches_p90": 0.002471883545347174,
+ "dP_over_P_matches_median": 0.00022773485156572427,
+ "dP_over_P_matches_p90": 0.0022513424970773146,
  "thresholds": {
   "double_harm": 1.2000000000000002,
   "prob_tune80": 0.3835676239288977,
-  "prob_null": 0.7,
+  "prob_null": 0.8,
   "max_period_h": 100.0
  },
  "same_data_agreement": {
   "Durech & Hanus 2023 (Gaia DR3)": [
-   4241,
-   4287
+   3548,
+   3564
   ],
   "Cellino 2024 (Gaia DR3)": [
-   3336,
-   3402
+   2855,
+   2883
   ],
   "MacLennan 2026 (Gaia DR3)": [
-   3113,
-   3178
+   2648,
+   2676
   ]
  },
  "independent_agreement": {
   "McNeill 2023 (TESS)": [
-   567,
-   1078
+   475,
+   863
   ],
   "Vavilov & Carry 2025 (TESS)": [
-   830,
-   926
+   691,
+   759
   ],
   "Erasmus 2020 (ATLAS)": [
-   222,
-   334
+   192,
+   280
   ]
  },
  "three_way_test_tierA": {
   "McNeill 2023 TESS": {
-   "n": 447,
-   "ours_vs_lcdb": 411,
-   "theirs_vs_lcdb": 273
+   "n": 379,
+   "ours_vs_lcdb": 352,
+   "theirs_vs_lcdb": 231
   },
   "Vavilov & Carry 2025 TESS": {
-   "n": 487,
-   "ours_vs_lcdb": 435,
-   "theirs_vs_lcdb": 419
+   "n": 411,
+   "ours_vs_lcdb": 373,
+   "theirs_vs_lcdb": 359
   },
   "Erasmus 2020 ATLAS": {
-   "n": 175,
-   "ours_vs_lcdb": 133,
-   "theirs_vs_lcdb": 135
+   "n": 146,
+   "ours_vs_lcdb": 111,
+   "theirs_vs_lcdb": 116
   }
  },
- "new_tierA_vs_6_catalogues": 1400,
- "new_tierA_published_elsewhere": 116,
- "new_tierA_novel": 1284,
+ "new_tierA_vs_6_catalogues": 942,
+ "new_tierA_published_elsewhere": 81,
+ "new_tierA_novel": 861,
  "novel_bands": {
-  "2-10h": 977,
-  "10-30h": 201,
-  "30-100h": 106
+  "2-10h": 667,
+  "10-30h": 131,
+  "30-100h": 63
  },
  "matched_control_tierA": [
-  242,
-  278
+  185,
+  205
  ],
  "null_test": {
-  "n": 4000,
-  "pass_at_tune_thr": 0.1978,
   "tune_thr": 0.384,
-  "pass_at_0.70": 0.0085
+  "tierA_thr": 0.8,
+  "n_solved_unknown": 32229,
+  "white": {
+   "n": 4000,
+   "pass_at_tune_thr": 0.1978,
+   "pass_at_0.70": 0.0085,
+   "pass_at_tierA": 0.001
+  },
+  "block": {
+   "n": 4000,
+   "pass_at_tune_thr": 0.184,
+   "pass_at_0.70": 0.0112,
+   "pass_at_tierA": 0.0005
+  }
  },
  "pilot42_vs_v3": {
   "match": 35,
@@ -215,5 +225,58 @@
     ""
    ]
   ]
- }
+ },
+ "test_tierA_by_lcdb_quality": {
+  "U>=3-": [
+   354,
+   371
+  ],
+  "U=2/2+": [
+   935,
+   1049
+  ],
+  "U=2-": [
+   14,
+   39
+  ]
+ },
+ "test_tierA_anatomy": {
+  "match": {
+   "n": 1303,
+   "tess_with_us": 356,
+   "tess_with_lcdb": 356,
+   "tess_n": 373
+  },
+  "1 c/d alias of LCDB": {
+   "n": 58,
+   "tess_with_us": 3,
+   "tess_with_lcdb": 0,
+   "tess_n": 3
+  },
+  "other": {
+   "n": 92,
+   "tess_with_us": 13,
+   "tess_with_lcdb": 3,
+   "tess_n": 31
+  },
+  "x2": {
+   "n": 6,
+   "tess_with_us": 4,
+   "tess_with_lcdb": 0,
+   "tess_n": 4
+  }
+ },
+ "spin_sense_vs_durech2023": [
+  3473,
+  3535
+ ],
+ "spin_sense_vs_damit": [
+  3802,
+  3899
+ ],
+ "spin_sense_vs_damit_not_in_durech": [
+  372,
+  394
+ ],
+ "tierA_unknown_with_sense": 3390
 }

@@ -1,136 +1,136 @@
 {
  "Durech & Hanus 2023 (Gaia DR3)": {
-  "n": 4287,
-  "agree": 4241,
-  "half": 2,
-  "double": 11,
-  "other": 33,
+  "n": 3564,
+  "agree": 3548,
+  "half": 0,
+  "double": 7,
+  "other": 9,
   "bands": {
    "10-30h": [
-    1030,
-    1023
+    824,
+    823
    ],
    "2-10h": [
-    2962,
-    2926
+    2515,
+    2503
    ],
    "30-100h": [
-    295,
-    292
+    225,
+    222
    ]
   },
-  "agree_rate": 0.989
+  "agree_rate": 0.996
  },
  "Cellino 2024 (Gaia DR3)": {
-  "n": 3402,
-  "agree": 3336,
-  "half": 1,
-  "double": 0,
-  "other": 65,
-  "bands": {
-   "2-10h": [
-    2155,
-    2094
-   ],
-   "10-30h": [
-    961,
-    957
-   ],
-   "30-100h": [
-    286,
-    285
-   ]
-  },
-  "agree_rate": 0.981
- },
- "MacLennan 2026 (Gaia DR3)": {
-  "n": 3178,
-  "agree": 3113,
-  "half": 1,
-  "double": 0,
-  "other": 64,
-  "bands": {
-   "2-10h": [
-    2004,
-    1944
-   ],
-   "10-30h": [
-    907,
-    903
-   ],
-   "30-100h": [
-    267,
-    266
-   ]
-  },
-  "agree_rate": 0.98
- },
- "McNeill 2023 (TESS)": {
-  "n": 1078,
-  "agree": 567,
-  "half": 12,
-  "double": 2,
-  "other": 497,
-  "bands": {
-   "10-30h": [
-    249,
-    141
-   ],
-   "2-10h": [
-    747,
-    380
-   ],
-   "30-100h": [
-    82,
-    46
-   ]
-  },
-  "agree_rate": 0.526
- },
- "Vavilov & Carry 2025 (TESS)": {
-  "n": 926,
-  "agree": 830,
-  "half": 8,
-  "double": 14,
-  "other": 74,
-  "bands": {
-   "10-30h": [
-    202,
-    181
-   ],
-   "2-10h": [
-    651,
-    589
-   ],
-   "30-100h": [
-    73,
-    60
-   ]
-  },
-  "agree_rate": 0.896
- },
- "Erasmus 2020 (ATLAS)": {
-  "n": 334,
-  "agree": 222,
+  "n": 2883,
+  "agree": 2855,
   "half": 0,
   "double": 0,
-  "other": 112,
+  "other": 28,
   "bands": {
    "10-30h": [
-    73,
-    48
+    798,
+    798
    ],
    "2-10h": [
-    239,
-    158
+    1858,
+    1831
    ],
    "30-100h": [
-    22,
-    16
+    227,
+    226
    ]
   },
-  "agree_rate": 0.665
+  "agree_rate": 0.99
  },
- "confident_total": 7911,
- "confident_not_in_any_catalogue": 1400
+ "MacLennan 2026 (Gaia DR3)": {
+  "n": 2676,
+  "agree": 2648,
+  "half": 0,
+  "double": 0,
+  "other": 28,
+  "bands": {
+   "10-30h": [
+    749,
+    749
+   ],
+   "2-10h": [
+    1718,
+    1691
+   ],
+   "30-100h": [
+    209,
+    208
+   ]
+  },
+  "agree_rate": 0.99
+ },
+ "McNeill 2023 (TESS)": {
+  "n": 863,
+  "agree": 475,
+  "half": 9,
+  "double": 1,
+  "other": 378,
+  "bands": {
+   "10-30h": [
+    196,
+    116
+   ],
+   "2-10h": [
+    608,
+    327
+   ],
+   "30-100h": [
+    59,
+    32
+   ]
+  },
+  "agree_rate": 0.55
+ },
+ "Vavilov & Carry 2025 (TESS)": {
+  "n": 759,
+  "agree": 691,
+  "half": 8,
+  "double": 11,
+  "other": 49,
+  "bands": {
+   "10-30h": [
+    164,
+    148
+   ],
+   "2-10h": [
+    542,
+    498
+   ],
+   "30-100h": [
+    53,
+    45
+   ]
+  },
+  "agree_rate": 0.91
+ },
+ "Erasmus 2020 (ATLAS)": {
+  "n": 280,
+  "agree": 192,
+  "half": 0,
+  "double": 0,
+  "other": 88,
+  "bands": {
+   "10-30h": [
+    64,
+    43
+   ],
+   "2-10h": [
+    198,
+    135
+   ],
+   "30-100h": [
+    18,
+    14
+   ]
+  },
+  "agree_rate": 0.686
+ },
+ "confident_total": 6238,
+ "confident_not_in_any_catalogue": 942
 }

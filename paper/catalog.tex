@@ -1,185 +1,240 @@
 \documentclass[twocolumn]{aastex631}
 
-\shorttitle{Gaia DR3 asteroid rotation periods}
+\shorttitle{Gaia DR3 asteroid periods and spin senses}
 \shortauthors{Tropynin}
 
 \begin{document}
 
-\title{Rotation Periods of 41{,}842 Asteroids from Gaia DR3 Sparse Photometry, with Calibrated Reliability and a Null Test}
+\title{Rotation Periods and Spin Senses of Asteroids from Gaia DR3 Sparse Photometry, with Calibrated Reliability and Null Tests}
 
 \author{Oleg Tropynin}
 \affiliation{Independent researcher, Kazakhstan}
 
 \begin{abstract}
-I derive rotation periods for every numbered asteroid with at least 25 Gaia DR3 transits (42{,}195
-objects; 41{,}842 solved). I use a periodogram with season offsets, a linear phase term and a
-second-order Fourier series, with the rotational phase corrected for the phase-angle bisector, and Gaia-centric geometry from numerical orbit integration. Asteroids with
-a known period are split once into a tuning half and a test half. Every choice, including the period-doubling
-rule and a logistic model for the probability that a period is correct, is fixed on the tuning half or on a
-null test in which the residuals are permuted within seasons. On the 4{,}834 test asteroids, confident (tier A)
-periods are correct within 3\% in 87.8\% of cases (1540/1753), and the probabilities are well calibrated.
-Without the null test, a threshold chosen for 80\% precision on known asteroids would have let 19.8\% of signal-free
-asteroids through. On known asteroids that resemble the unknown population, tier A is 87\% correct (242/278).
-Agreement with three other Gaia DR3 analyses is 98--99\%, and with TESS (Vavilov \& Carry) 90\%. I list 1{,}284 tier-A periods for asteroids with no
-published period in LCDB, DAMIT, about 180 VizieR tables or the Minor Planet Bulletin. The pipeline processes
-DR3 in about twenty minutes on ten cores and is intended to run on Gaia DR4 on release day.
+I fitted a periodogram to every numbered asteroid with at least 25 Gaia DR3 transits (41{,}842 solved). The model
+has season offsets, a linear phase term and a second-order Fourier series. The rotational phase is corrected for
+the phase-angle bisector (PAB), with both senses of rotation tried. The fit therefore returns the spin sense as
+well as the period.
+
+Asteroids with a known period were split once into a tuning half and a test half. The period-doubling rule and a
+logistic model for the probability of a correct period were fitted on the tuning half. The confidence threshold
+was taken from two null tests that destroy rotation but keep the Gaia sampling.
+
+On the test half, the 6{,}238 confident (tier A) periods are correct within 3\% in 89.3\% of cases (1303/1459),
+and in 95.4\% (354/371) where the reference period has quality $U\ge3-$. Many of the remaining disagreements
+are daily aliases in the ground-based reference periods. The spin sense agrees with published pole solutions
+in 98\% of cases. I list 861 tier-A periods with no published value in the sources checked; their expected
+precision is about 90\%, and null tests limit noise to at most 3.7\%. The pipeline processes DR3 in about 20
+minutes on ten cores and is meant to run on Gaia DR4 on release day.
 \end{abstract}
 
 \keywords{Asteroid rotation (2211) --- Light curves (918) --- Main belt asteroids (2036) --- Photometry (1234)}
 
 \section{Introduction}
 
-Gaia DR3 gave sparse photometry for about 157{,}000 numbered asteroids \citep{Tanga2023}. Three groups
-have derived rotation periods or shapes from it. \citet{Durech2023} used convex inversion,
-\citet{Cellino2024} used a genetic search and \citet{MacLennan2026} used a period search with
-phase-curve modelling. All three use the same data, and a large fraction of the asteroids with enough
-transits remains without a published period. Two things are needed before such periods can be used:
-an honest estimate of how often a period is wrong, and the same estimate for the asteroids that are
-\emph{not} already in other catalogues. This paper provides both and makes the pipeline fast enough
-to rerun on Gaia DR4 (expected in December 2026, with about twice the time baseline).
-A pilot on 600 asteroids was reported separately \citep{Tropynin2026a}.
+Gaia DR3 gave sparse photometry for about 157{,}000 numbered asteroids \citep{Tanga2023}. Three groups have
+derived rotation periods or spin states from these data, with different methods:
+\citet{Durech2023}, \citet{Cellino2024} and \citet{MacLennan2026}. Many asteroids with enough transits still
+have no published period.
+
+Two things are needed before such periods can be used:
+\begin{enumerate}
+\item an estimate of how often a period is wrong;
+\item the same estimate for asteroids that are \emph{not} already in other catalogues.
+\end{enumerate}
+This paper provides both. It also makes the pipeline fast enough to rerun on Gaia DR4, expected in December
+2026 with about twice the time baseline. A pilot on 600 asteroids was reported in \citet{Tropynin2026a}.
 
 \section{Data and geometry}
 
-All 20 bulk files of \texttt{sso\_observation} (23.3\,M CCD rows) were averaged per
-\texttt{transit\_id}, giving 3{,}069{,}170 transits of 156{,}789 numbered asteroids. The median
-asteroid has 17 transits; 42{,}195 have at least 25 and are analysed here. Each transit takes the largest
-relative flux error of its CCDs, with a 0.03\,mag floor.
+All 20 bulk files of \texttt{sso\_observation} (23.3\,M CCD rows) were averaged per \texttt{transit\_id}. This
+gives 3{,}069{,}170 transits of 156{,}789 numbered asteroids. Of these, 42{,}195 asteroids have at least 25
+transits. Each transit carries the largest relative flux error of its CCDs, with a 0.03\,mag floor.
 
-Heliocentric positions come from osculating elements (JPL, epoch 2026 June) integrated back to
-2014--2017 with a fourth-order Runge--Kutta scheme. The step is one day, and the integration includes
-the Sun and the four giant planets, using JPL Horizons vectors. Gaia's position is given in the data.
-Light time is iterated. Against JPL Horizons on 19 asteroids, the reduced magnitude agrees to 0.0007\,mag,
-the observer distance to 0.0005\,au and the phase angle to 0.009$^\circ$. A two-body solution was
-rejected because its errors reach 0.13\,mag.
+Heliocentric positions come from JPL osculating elements (epoch 2026 June). These were integrated back to
+2014--2017 with a fourth-order Runge--Kutta scheme, a one-day step, and the Sun and giant planets as
+perturbers. Gaia's position is taken from the data, and light time is iterated. Against JPL Horizons on 19
+asteroids, reduced magnitudes agree to 0.0007\,mag.
 
-\section{Period search}
+\section{Model and search}
 
-The reduced magnitude $G-5\log_{10}(r\Delta)$ is fitted by weighted least squares. The model has one
-constant per observing season (seasons are separated by gaps longer than 60\,d), a term linear in phase
-angle and a second-order Fourier series in rotational phase. Outliers beyond 5 median absolute
-deviations from the no-rotation model are removed in two passes.
+The reduced magnitude $G-5\log_{10}(r\Delta)$ is fitted by weighted least squares. The model has three parts:
+\begin{itemize}
+\item one constant per observing season;
+\item a term linear in phase angle;
+\item a second-order Fourier series in the phase $2\pi(ft - s\,\lambda_{\rm PAB}/360^\circ)$.
+\end{itemize}
+Here $\lambda_{\rm PAB}$ is the ecliptic longitude of the phase-angle bisector seen from Gaia, and $s=\pm1$ is
+the sense of rotation. Both senses are searched, and the better fit is kept.
 
-Over the 34-month baseline the rotational phase seen from Gaia drifts with the longitude
-$\lambda_{\rm PAB}$ of the phase-angle bisector. The Fourier terms therefore use the phase
-$2\pi(ft - s\,\lambda_{\rm PAB}/360^\circ)$, where $s=\pm1$ is the unknown sense of rotation.
-Both senses are searched and the better fit is kept. On the test set below, this correction raised
-the fraction of correct periods from 45.5\% to 52.6\%. It also raised the number of confident periods
-from 1250 to 1753 at higher precision, and it reduced the median difference from the sidereal periods
-of \citet{Durech2023} by a factor of four.
+Periods of 2--1000\,h are scanned on a grid with step $0.5/T$, where $T$ is the time span; the 30 deepest
+minima are then refined. A grid five times finer changed precision by less than a point. If the
+first-harmonic amplitude exceeds $1.20$ times the second, the doubled period is adopted, because most
+lightcurves are double-peaked.
 
-The search scans periods of 2--1000\,h on a grid with a step of $0.5/T$, where $T$ is the time span. The
-30 deepest minima are then refined. A grid five times finer changed test precision by less than one
-point.
+On the test set described below, the PAB correction had three effects:
+\begin{itemize}
+\item the fraction of correct periods rose from 45.5\% to 52.6\%;
+\item the median difference from the sidereal periods of \citet{Durech2023} fell by a factor of four;
+\item the period dependence of that difference, expected for an uncorrected synodic drift, largely disappeared
+($9\times10^{-5}\to6\times10^{-6}$ at 2--5\,h, $3\times10^{-4}\to7\times10^{-5}$ at 10--30\,h).
+\end{itemize}
 
-Most lightcurves are double-peaked, so at the true period the second harmonic dominates. If the
-first-harmonic amplitude $A_1$ exceeds $1.20A_2$, the doubled period is adopted. The factor 1.20 was
-chosen on the tuning half. A BIC comparison of fourth-order models at $P$ and $2P$ was tried first and
-rejected, because it favoured the half period.
+\section{Calibration and null tests}
 
-\section{Calibration, null test and tiers}
+The truth set is LCDB V4.0 \citep{Warner2009} with quality $U\ge2$. Its last update (September 2021) predates
+Gaia DR3. A period counts as correct if it lies within 3\% of the LCDB value. The 9{,}613 known asteroids were
+split by a hash of their number into TUNE (4{,}779) and TEST (4{,}834).
 
-The truth set is LCDB V4.0 \citep{Warner2009}, quality $U\ge2$: 9{,}613 of the solved asteroids. A
-period counts as correct if it is within 3\% of the LCDB value. The asteroids are split by a hash of
-their number into TUNE (4{,}779) and TEST (4{,}834). On TUNE I fitted a logistic model of the probability
-of a correct period. Its inputs are the $\chi^2$ gain over the no-rotation model, the separation from the
-next non-alias minimum, the number of transits, the amplitude, the reduced $\chi^2$, the period and
-$A_1/A_2$. On TEST the predicted probabilities match the observed fractions (Figure~\ref{fig:rel}).
+On TUNE I fitted the doubling rule and a logistic model of the probability that a period is correct. The model
+uses seven features: the $\chi^2$ gain over a no-rotation model, the separation from the next non-alias
+minimum, the number of transits, the amplitude, the reduced $\chi^2$, the period and the harmonic ratio. On
+TEST, the predicted probabilities follow the observed fractions (Figure~\ref{fig:rel}). The top bin is
+slightly overconfident: 0.95 predicted against 0.89 observed.
 
-A threshold that gives 80\% precision on TUNE (0.384) is not safe for unknown asteroids. To test it, I
-permuted the residuals of the no-rotation model within each season for 4{,}000 random unknown asteroids.
-This keeps the sampling, the errors and the season levels but destroys rotation. At 0.384, 19.8\% of these
-signal-free asteroids still pass. At 0.70 the rate falls to 0.85\% (Figure~\ref{fig:thr}). Tier~A is
-therefore defined as probability $\ge0.70$ and period $<100$\,h. Tier~B covers 0.384--0.70. Best periods
-of 100--1000\,h are flagged as slow candidates and never treated as confident, because only about 40\% of
-them are correct.
+The threshold for confident periods was not chosen on TEST. I ran two null tests on 4{,}000 random asteroids
+without a known period:
+\begin{itemize}
+\item \emph{white}: the residuals of the no-rotation model were permuted within seasons;
+\item \emph{block}: one-day blocks of residuals were permuted, so that correlated systematics survive.
+\end{itemize}
+Noise periods match no catalogue, so they all end up in the uncatalogued subset. I therefore required, before
+choosing a threshold, that the projected noise be below 5\% even in that subset.
+
+At the TUNE threshold for 80\% precision (0.384), 19.8\% (white) and 18.4\% (block) of signal-free asteroids
+pass. At 0.80 the pass rates are 0.10\% and 0.05\% (Figure~\ref{fig:thr}). Tier~A is therefore defined as
+probability $\ge0.80$ and period $<100$\,h. Periods of 100--1000\,h are flagged as slow candidates and are
+never treated as confident.
 
 \section{Results}
 
-Of 41{,}842 solutions, 7{,}911 are tier~A and 6{,}102 are tier~B; 1{,}162 are flagged as slow candidates.
-On TEST the results are:
+\subsection{Periods}
+
+Of 41{,}842 solutions, 6{,}238 are in tier~A. On TEST, tier~A is correct in 1303 of 1459 cases (89.3\%): 90\%,
+88\% and 83\% in the 2--10, 10--30 and 30--100\,h ranges (Figure~\ref{fig:lcdb}). The result depends strongly on
+the quality of the reference period:
 \begin{itemize}
-\item tier A: 1540 of 1753 correct (87.8\%), with 89\%, 87\% and 84\% in the 2--10, 10--30 and 30--100\,h bands;
-\item the 213 tier-A errors: 200 other periods, 11 at $2P$ and 2 at $P/2$;
-\item tier B: 62\% correct.
+\item 95.4\% (354/371) where LCDB has $U\ge3-$;
+\item 89.1\% for $U=2$ and $2+$;
+\item 36\% for $U=2-$.
 \end{itemize}
 
-The comparison with LCDB is shown in Figure~\ref{fig:lcdb}. Correct periods agree with LCDB to a median of
-$2.3\times10^{-4}$ and with the sidereal periods of \citet{Durech2023} to $3.9\times10^{-5}$. The curvature
-error of the $\chi^2$ minimum underestimates the latter scatter. I therefore add $5.5\times10^{-5}P$ in
-quadrature, which gives a median $|\Delta P|/\sigma$ of about 0.67.
+Of the 156 disagreements:
+\begin{itemize}
+\item 58 differ from LCDB by exactly one cycle per day in lightcurve frequency, the daily alias of
+single-site photometry;
+\item 6 differ by a factor of two;
+\item 92 are other periods.
+\end{itemize}
+Where an independent TESS period exists \citep{Vavilov2025}, it sides with this work in 20 of these 38 cases
+and with LCDB in 3. Many apparent errors are therefore errors in the reference.
 
-\emph{Transfer to unknown asteroids.} The TEST asteroids are brighter and better studied than the
-asteroids without a period. The closest known analogue is the set of TEST asteroids that appear in none of
-the six catalogues of Table~\ref{tab:lit}. Tier~A is 87\% correct on them (242/278; 95\% interval
-83--91\%). I adopt this figure for the new periods.
+On TEST asteroids that appear in none of the six catalogues of Table~\ref{tab:lit}, the closest known analogue
+of the unknown population, tier~A is correct in 185 of 205 cases (90\%).
 
 \begin{deluxetable}{lccc}
 \tablecaption{Agreement of tier-A periods with published catalogues (within 3\%).\label{tab:lit}}
 \tablehead{\colhead{Catalogue} & \colhead{Data} & \colhead{$n$} & \colhead{Agree}}
 \startdata
-\citet{Durech2023} & Gaia DR3 & 4287 & 98.9\% \\
-\citet{Cellino2024} & Gaia DR3 & 3402 & 98.1\% \\
-\citet{MacLennan2026} & Gaia DR3 & 3178 & 98.0\% \\
-\citet{Vavilov2025} & TESS & 926 & 89.6\% \\
-\citet{Erasmus2020} & ATLAS & 334 & 66.5\% \\
-\citet{McNeill2023} & TESS & 1078 & 52.6\% \\
+\citet{Durech2023} & Gaia DR3 & 3564 & 99.6\% \\
+\citet{Cellino2024} & Gaia DR3 & 2883 & 99.0\% \\
+\citet{MacLennan2026} & Gaia DR3 & 2676 & 99.0\% \\
+\citet{Vavilov2025} & TESS & 759 & 91.0\% \\
+\citet{Erasmus2020} & ATLAS & 280 & 68.6\% \\
+\citet{McNeill2023} & TESS & 863 & 55.0\% \\
 \enddata
-\tablecomments{Rows that use Gaia DR3 test consistency, not accuracy. For TEST asteroids that are also in
-LCDB, this work and the catalogue agree with LCDB in 435 vs 419 of 487 cases (Vavilov \& Carry), 133 vs 135 of
-175 (Erasmus et al.), and 411 vs 273 of 447 (McNeill et al.).}
+\tablecomments{The Gaia DR3 rows test consistency, not accuracy. For TEST asteroids also in LCDB, the number
+of cases that agree with LCDB, this work vs.\ the catalogue: 373 vs.\ 359 of 411 (Vavilov \& Carry), 111 vs.\
+116 of 146 (Erasmus et al.) and 352 vs.\ 231 of 379 (McNeill et al.).}
 \end{deluxetable}
 
-\emph{New periods.} 1{,}400 tier-A asteroids have no period in LCDB or in the six catalogues. 116 of them do
-have a period in DAMIT \citep{Durech2010}, in about 180 VizieR tables with rotation periods (5.0\,M rows) or
-in the Minor Planet Bulletin, volumes 50--53. Where such a value exists, this work agrees with it in 63 of
-89 cases. The remaining 1{,}284 (977 at 2--10\,h, 201 at 10--30\,h, 106 at 30--100\,h) are listed as new, with
-an expected precision of about 87\%. Behrend's Geneva page and ZTF catalogues outside VizieR were not
+The $\chi^2$-curvature errors are too small. Against \citet{Durech2023}, the median $|\Delta P/P|$ is
+$3.9\times10^{-5}$. Adding $5.5\times10^{-5}P$ in quadrature gives a median $|\Delta P|/\sigma\approx0.67$. This
+calibration measures agreement between two methods on the same data; it does not include aliasing.
+
+\subsection{Spin senses}
+
+The sense $s$ chosen by the PAB fit agrees with the hemisphere of published poles in three comparisons:
+\begin{itemize}
+\item 3473 of 3535 asteroids (98.2\%) in \citet{Durech2023};
+\item 3802 of 3899 (97.5\%) in DAMIT \citep{Durech2010};
+\item 372 of 394 (94.4\%) for DAMIT asteroids that are not in \citet{Durech2023}.
+\end{itemize}
+Poles within $20^\circ$ of the ecliptic and ambiguous pole pairs were excluded. The catalogue gives the sense
+for every tier-A asteroid: 3{,}677 retrograde and 2{,}561 prograde, of which 3{,}390 have no LCDB period.
+
+\subsection{New periods}
+
+942 tier-A asteroids have a period neither in LCDB nor in the six catalogues. For 81 of them a rotation period
+appears elsewhere:
+\begin{itemize}
+\item in DAMIT;
+\item in about 180 VizieR tables with rotation periods (5.0\,M rows), with units taken from the table metadata
+and non-rotation periods excluded;
+\item in the Minor Planet Bulletin, volumes 50--53.
+\end{itemize}
+Where values can be compared, the disagreements have known causes:
+\begin{itemize}
+\item partial-coverage PTF periods that are half of ours;
+\item K2 periods that differ by 3--6\%;
+\item fast rotators below our 2\,h limit;
+\item two slow rotators.
+\end{itemize}
+
+The remaining 861 asteroids (667 at 2--10\,h, 131 at 10--30\,h, 63 at 30--100\,h) are listed as new. The
+matched control gives an expected precision of about 90\%. The null tests allow at most 16--32 noise periods,
+or $\le3.7\%$ of the list. SsODNet, Behrend's Geneva page and ZTF period papers outside VizieR were not
 searched.
 
-\emph{Pilot candidates.} Of the 42 candidates of \citet{Tropynin2026a}:
+Of the 42 candidates of \citet{Tropynin2026a}:
 \begin{itemize}
 \item 35 agree with this work;
-\item 4 flagged ``low'' are doubled here;
-\item for 3 flagged ``high'' (39932, 109412, 13686), the extended 1000\,h search prefers slow solutions, none of them tier~A. These three should be treated as ambiguous.
+\item 4 flagged ``low'' have their period doubled here;
+\item 3 flagged ``high'' (39932, 109412, 13686) now prefer slow solutions outside tier~A and should be treated
+as ambiguous.
 \end{itemize}
 
 \section{Limitations and plans for Gaia DR4}
 
-The $A_1/A_2$ rule is a heuristic. A model-based comparison of $P$ and $2P$ (ellipsoid or convex fit)
-would be more robust. The PAB correction assumes a fixed sense of rotation and no pole information; a coarse pole search would refine it.
-Tumbling and slow rotators fall outside a single-period model. For DR4, all thresholds, the null test and
-the matched-control test will be fixed in advance, and injection--recovery tests on the real DR4
-sampling will be added, so that results can be released within a day without re-tuning.
+Periods below 2\,h are not searched. The $A_1/A_2$ doubling rule is a heuristic. For doubled periods the PAB
+coefficient should be 2; a variant that also tries 2 improved TEST precision only from 89.3\% to 89.7\%.
+Tumblers fall outside a single-period model, and injection--recovery tests on the real Gaia sampling are still
+to be done.
+
+DR4 will have about 66 months of data. For it I plan to fit the sidereal period and the pole jointly on a
+coarse pole grid, with a model-based comparison of $P$ and $2P$. Thresholds and null tests will be fixed in
+advance, so that results can be released within a day.
 
 \begin{figure}
 \plotone{fig1_lcdb.pdf}
-\caption{Period from this work against the LCDB period for TEST asteroids. Tier A is shown in blue and
-tier B in orange. The lines mark $P$, $2P$ and $P/2$.\label{fig:lcdb}}
+\caption{Period from this work against the LCDB period for TEST asteroids. Blue: tier~A; orange: tier~B.
+Lines mark $P$, $2P$ and $P/2$. The off-diagonal scatter includes daily aliases in the reference
+periods.\label{fig:lcdb}}
 \end{figure}
 
 \begin{figure}
 \plotone{fig2_reliability.pdf}
-\caption{Reliability diagram on TEST, all solutions. Bars are 95\% binomial intervals; numbers give the
-count per bin.\label{fig:rel}}
+\caption{Reliability diagram on TEST, all solutions. Bars are 95\% binomial intervals; numbers give the count
+per bin.\label{fig:rel}}
 \end{figure}
 
 \begin{figure*}
 \plotone{fig3_threshold.pdf}
-\caption{Left: fraction of signal-free (permuted) asteroids that pass as a function of the probability
-threshold. Right: precision on TEST. Dashed: the TUNE 80\%-precision threshold. Solid: the tier-A
-threshold.\label{fig:thr}}
+\caption{Left: fraction of signal-free asteroids (block null test) that pass, as a function of the probability
+threshold. Right: precision on TEST. Dashed line: the TUNE threshold for 80\% precision. Solid line: the
+tier-A threshold.\label{fig:thr}}
 \end{figure*}
 
 \section{Data availability}
 
-The catalogue (41{,}842 rows), the list of 1{,}284 new periods, the validation tables and the code will be archived on Zenodo [DOI to be assigned].
+The catalogue (41{,}842 rows, with spin senses), the list of 861 new periods, the validation tables and the
+code will be archived on Zenodo [DOI to be assigned].
 
 \begin{acknowledgments}
-This work used data from the ESA mission Gaia, processed by the Gaia DPAC; JPL Horizons and the JPL
-Small-Body Database; LCDB; and VizieR (CDS, Strasbourg). The analysis was designed, coded and checked with
-the help of an AI assistant (Claude, Anthropic) under the author's direction. Two AI-based referee passes
-were used to stress-test the validation before submission.
+This work used data from the ESA mission Gaia, processed by the Gaia DPAC; JPL Horizons and the JPL Small-Body
+Database; LCDB; DAMIT; and VizieR (CDS, Strasbourg). The analysis was designed, coded and checked with the help
+of an AI assistant (Claude, Anthropic) under the author's direction. Two rounds of AI-based referee review were
+used to stress-test the validation.
 \end{acknowledgments}
 
 \begin{thebibliography}{}

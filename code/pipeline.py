@@ -38,9 +38,21 @@ def work(args):
             res = y - fit
             rng = np.random.default_rng(int(NULL_SEED) + int(num))
             season = base[:, :-1].argmax(axis=1)
+            block_days = float(os.environ.get("PIPELINE_NULL_BLOCK", 0))
             for s_ in np.unique(season):           # shuffle residuals within each season: keeps sampling, errors and season levels
                 m = np.where(season == s_)[0]
-                res[m] = res[rng.permutation(m)]
+                if block_days <= 0:
+                    res[m] = res[rng.permutation(m)]
+                    continue
+                # block null: permute whole groups of transits (one Gaia visit, ~block_days long) and keep
+                # the residuals inside a group together, so correlated systematics survive the shuffle
+                grp = np.floor((t[m] - t[m][0]) / block_days).astype(int)
+                blocks = [m[grp == g] for g in np.unique(grp)]
+                order = rng.permutation(len(blocks))
+                vals = np.concatenate([res[blocks[i]] for i in order])
+                pos = np.concatenate(blocks)
+                # re-lay the permuted residual sequence over the original positions of the season
+                res[np.sort(pos)] = vals
             prep = (t, fit + res, w, base, *extra)
         res = period2.search(*prep)
         res["num"] = int(num)

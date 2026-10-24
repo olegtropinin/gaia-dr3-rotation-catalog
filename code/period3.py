@@ -84,11 +84,15 @@ def prepare(mag, rel_err, r, delta, alpha, t_lt, lam):
 
 def search(t, y, w, base, lam, n_refine=30):
     best = None
+    # PERIOD3_SCALES="1,2" also tries a PAB coefficient of 2: when the best frequency is twice the rotation
+    # frequency (single-peaked fit, period doubled later), the drift in fitted cycles is 2*lambda/360
+    scales = [float(x) for x in os.environ.get("PERIOD3_SCALES", "1").split(",")]
     for sense in (1, -1):
-        r = search_one(t, y, w, base, -sense * lam, n_refine)
-        r["sense"] = sense
-        if best is None or r["chi_best"] < best["chi_best"]:
-            best = r
+        for sc in scales:
+            r = search_one(t, y, w, base, -sense * sc * lam, n_refine)
+            r["sense"], r["pab_scale"] = sense, sc
+            if best is None or r["chi_best"] < best["chi_best"]:
+                best = r
     return best
 
 
