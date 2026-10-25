@@ -17,21 +17,23 @@ All numbers are in `validation/stats_final.json`.
 - Each tier-A period comes with a spin sense (prograde or retrograde). It agrees with published pole
   solutions for **98 %** of asteroids in Durech & Hanus 2023 and **97.5 %** in DAMIT.
 
-**Physical check: the Yarkovsky effect.** The spin senses reproduce the Yarkovsky drift. Inside
-collisional families, prograde rotators should lie outside the parent's semimajor axis and retrograde
-rotators inside it.
-- All family members with a spin sense: 74.8 % (1753/2345) behave this way, against 50 % expected
-  without the effect (p ~ 1e-132).
-- The 912 asteroids that had no previously published pole: 73.6 % (p ~ 1e-48).
+**Physical check: Yarkovsky segregation in families.** The spin senses reproduce the known Yarkovsky
+segregation in families (Hanus et al. 2013, 2018): prograde rotators lie outside the parent's semimajor
+axis and retrograde rotators inside it.
+- 74.8 % of 2,345 family members are on the predicted side. Permuting the senses within each family gives
+  52.4 ± 0.9 %, so the excess is z = 24.7.
+- The fraction rises from 58 % near the family centre to 82 % for the most drifted members.
+- The 912 members with no pole in Durech & Hanus 2023 extend the known samples, at 73.6 %.
 
-**108 likely errors in LCDB.** For 108 periods still in the current LCDB/JPL SBDB, our period is supported
-by an independent survey or by other Gaia analyses, and the LCDB value is not. Many are daily aliases.
-Nine more periods flagged by the same test have already been corrected in the 2023 LCDB revision, each to
-our value.
+**108 disputed LCDB periods** in the 2023 LCDB revision distributed by JPL SBDB.
+- 39 are disputed by independent survey data (TESS, ATLAS).
+- 69 rest on agreement among Gaia DR3 analyses only.
+- Nine more periods flagged by the same test were already revised in that LCDB revision, each to the value
+  found here.
 
-**861 tier-A periods with no published value** in any source we checked:
+**861 candidate new periods (tier A)** in any source we checked:
 - expected precision about 90 %;
-- noise from the null tests: at most 3.7 % of this list.
+- noise from the null tests: 3.7-4.5 % of this list (95 % upper limit 5.9 %).
 
 ## Contents
 
@@ -103,11 +105,18 @@ season levels but remove rotation:
 The rule, fixed before choosing the threshold: noise that could reach tier A must stay below 5 % even
 inside the uncatalogued subset. Noise periods match no catalogue, so they all end up there.
 
-| Threshold | White null pass | Block null pass | Noise bound (x 32,229 unknowns) |
+Both nulls were run on all 32,229 solved asteroids without an LCDB period. The number that pass equals the
+projected number of noise periods.
+
+| Threshold | White pass | Block pass | Share of the 861 candidates (95 % upper limit) |
 |---|---|---|---|
 | 0.384 (TUNE 80 % precision) | 19.8 % | 18.4 % | — |
-| 0.70 | 0.85 % | 1.12 % | 274-363 |
-| **0.80 (tier A)** | 0.10 % | 0.05 % | 16-32, i.e. <= 3.7 % of the 861 |
+| 0.70 | 264 | 248 | — |
+| 0.75 | 104 | 108 | — |
+| **0.80 (tier A)** | **39** | **32** | **3.7-4.5 % (5.9 %)** |
+| 0.85 | 12 | 8 | |
+
+The estimate is conservative, because it treats every unknown asteroid as having no detectable rotation.
 
 ## Reliability
 
@@ -216,11 +225,20 @@ not at the V-shape centre.
 
 See `paper/fig4_yarkovsky.png`.
 
-The spin sense was fitted from photometry alone and knows nothing about family membership or semimajor
-axis. The family test is therefore an independent physical check of the senses. It also shows that the
-912 new senses carry real information.
+This segregation is already known from modelled poles (Hanus et al. 2013, 2018; Kryszczynska 2013). Here it
+serves as a check: random sense errors can only dilute it, so 74.8 % means that at least 75 % of the senses
+are correct, a bound that does not rely on any pole catalogue.
 
-## Likely errors in LCDB
+| Robustness check | Result |
+|---|---|
+| Senses permuted within families (correct null) | 52.4 ± 0.9 % expected; observed 74.8 % (z = 24.7) |
+| Odds ratio | 9.1 |
+| Members near the centre | 58 % |
+| Members far from the centre (\|a - a_c\| D > 2x family median) | 82 % |
+
+Tier A favours high-amplitude rotators, so these fractions describe that subset, not whole families.
+
+## Disputed LCDB periods
 
 `data/lcdb_suspect_periods.csv` lists 117 tier-A asteroids whose LCDB V4.0 period disagrees with ours. In
 each case either:
@@ -232,7 +250,8 @@ Of these, 32 are exact daily aliases and 14 are factor-2 differences.
 
 Status in today's JPL SBDB (LCDB revision 2023):
 - 9 have already been corrected to our value;
-- **108 are still in the database**, 39 of them with independent support.
+- **108 remain and are disputed**: 39 by independent survey data, 69 only by agreement of Gaia DR3
+  analyses. LCDB quality of the 108: U = 2: 83, 2+: 9, 2-: 5, 3-: 3, 3: 8.
 
 ## Comparison with other catalogues
 
@@ -357,6 +376,25 @@ For DR4, only `RELEASE_PREFIX` should need to change. Check the DR4 file layout 
 
 `code/run_release.sh` does not run the novelty searches beyond the six catalogues. Run them separately:
 `novelty_vizier.py`, `novelty_catalogs.py`, `mpb_check.py`, then `tally_novelty.py`.
+
+## Input data not included here
+
+The scripts read these inputs from `data/`:
+
+| Input | Source |
+|---|---|
+| Gaia DR3 `sso_observation` bulk files (4.4 GB) | `code/fetch_bulk.py` |
+| Osculating elements `ELEMENTS.NUMBR.gz` | JPL SSD |
+| Planet vectors | JPL Horizons, fetched by `nbody.py` |
+| LCDB V4.0 summary table `lc_summary.csv` | PDS Small Bodies Node |
+| Durech & Hanus 2023: periods and poles | VizieR J/A+A/675/A24 |
+| Cellino et al. 2024 | VizieR J/A+A/687/A277 |
+| MacLennan et al. 2026 | VizieR J/A+A/707/A131 |
+| McNeill et al. 2023 | VizieR J/AJ/166/152 |
+| Vavilov & Carry 2025 | VizieR J/A+A/693/A66 |
+| Erasmus et al. 2020 | VizieR J/ApJS/247/13 |
+| DAMIT asteroid and model tables | damit.cuni.cz/projects/damit/exports |
+| AstDyS family membership and synthetic proper elements: `all_tro.members`, `all.syn` | AstDyS |
 
 ## Acknowledgements
 

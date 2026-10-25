@@ -41,7 +41,7 @@ fig.tight_layout(); fig.savefig(os.path.join(OUT, "fig2_reliability.pdf")); fig.
 
 # 3. threshold trade-off: null pass rate and TEST precision (two panels, one quantity each)
 res = c.load_results(); lcdb = c.load_lcdb(); tbic, model, thr, _ = c.calibrate(res, lcdb)
-null = c.load_results("results_null_block")
+null = c.load_results("results_null_block_all" if os.path.isdir("results_null_block_all") else "results_null_block")
 Pn = model(np.array([c.features(r, tbic) for r in null])); sn = np.array([c.final_period(r, tbic) < 100 for r in null])
 tr = [r for r in res if r["num"] in lcdb and c.is_test(r["num"])]
 Pt = model(np.array([c.features(r, tbic) for r in tr])); stt = np.array([c.final_period(r, tbic) < 100 for r in tr])
@@ -49,7 +49,7 @@ okt = np.array([c.match(c.final_period(r, tbic), lcdb[r["num"]]) for r in tr])
 th = np.linspace(0.3, 0.95, 66)
 fig, (a1, a2) = plt.subplots(1, 2, figsize=(6.4, 2.6))
 a1.plot(th, [100 * (sn & (Pn >= t)).mean() for t in th], color=INK, lw=1.2)
-a1.set(xlabel="probability threshold", ylabel="signal-free asteroids passing (%)", title="block null test (4000 asteroids)")
+a1.set(xlabel="probability threshold", ylabel="signal-free asteroids passing (%)", title="block null test (32,229 asteroids)")
 a2.plot(th, [100 * okt[stt & (Pt >= t)].mean() for t in th], color=BLUE, lw=1.2)
 a2.set(xlabel="probability threshold", ylabel="precision on TEST (%)", title="held-out LCDB asteroids")
 for a in (a1, a2):

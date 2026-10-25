@@ -21,3 +21,9 @@ family  n   consistent  p        pro_out pro_in ret_out ret_in
 centre = median of members: consistent 1671/2345 = 0.713, p = 2.8e-97
 namesake centre, no D&H pole: consistent 671/912 = 0.736, p = 7.0e-48
 median centre, no D&H pole: consistent 662/912 = 0.726, p = 5.7e-44
+permutation null (senses shuffled within families): expected 1230 +- 21 of 2345 (0.524); observed 1753 (0.748); z = 24.7; max of 20000 sims 1311
+2x2 (outside/inside x prograde/retrograde): [[761,367],[225,992]], odds ratio 9.1
+  |da|*D / family median in [0,0.5): consistent 0.582 (n=529)
+  |da|*D / family median in [0.5,1): consistent 0.754 (n=626)
+  |da|*D / family median in [1,2): consistent 0.815 (n=843)
+  |da|*D / family median in [2,1000000000.0): consistent 0.824 (n=347)

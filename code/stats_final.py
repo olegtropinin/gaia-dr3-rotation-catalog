@@ -49,7 +49,7 @@ ctrl = [r for r in A_test if int(r["number"]) not in _six]
 def null_stats():
     res = c.load_results(); lc = c.load_lcdb(); tb, model, thr, _ = c.calibrate(res, lc)
     out = {"tune_thr": round(thr, 3), "tierA_thr": c.CONF_PROB_MIN, "n_solved_unknown": sum(r["num"] not in lc for r in res)}
-    for name, sub in (("white", "results_null"), ("block", "results_null_block")):
+    for name, sub in (("white", "results_null_all" if os.path.isdir("results_null_all") else "results_null"), ("block", "results_null_block_all" if os.path.isdir("results_null_block_all") else "results_null_block")):
         null = c.load_results(sub)
         P = model(np.array([c.features(r, tb) for r in null]))
         sh = np.array([c.final_period(r, tb) < c.CONF_MAX_P for r in null])
@@ -61,7 +61,7 @@ def null_stats():
 def pilot_check():
     cat = {int(r["number"]): r for r in R}
     out = {"match": 0, "x2": 0, "x0.5": 0, "differs": 0, "absent": 0, "differs_list": []}
-    for p in csv.DictReader(open("/Users/oleg/work/gaia-asteroid-periods/data/candidates.csv")):
+    for p in csv.DictReader(open(os.environ.get("PILOT_CANDIDATES", "data/pilot42_candidates.csv"))):
         n, pp = int(p["number"]), float(p["period_h"])
         if n not in cat:
             out["absent"] += 1; continue

@@ -50,5 +50,5 @@ dp = np.array([abs(float(r["period_h"]) - float(r["lcdb_period_h"])) / float(r["
 print("   |dP/P| of confident TEST matches: median", f"{np.median(dp[dp < .03]):.5f}", "90%", f"{np.percentile(dp[dp < .03], 90):.5f}")
 
 pilot = json.load(open("../sci/candidates68.json")) if os.path.exists("../sci/candidates68.json") else []
-cands42 = list(csv.DictReader(open("/Users/oleg/work/gaia-asteroid-periods/data/candidates.csv")))
+cands42 = list(csv.DictReader(open(os.environ.get("PILOT_CANDIDATES", "data/pilot42_candidates.csv"))))
 print("4) pilot candidates.csv columns:", list(cands42[0].keys())[:10])

@@ -156,16 +156,16 @@
   "tierA_thr": 0.8,
   "n_solved_unknown": 32229,
   "white": {
-   "n": 4000,
-   "pass_at_tune_thr": 0.1978,
-   "pass_at_0.70": 0.0085,
-   "pass_at_tierA": 0.001
+   "n": 32229,
+   "pass_at_tune_thr": 0.1995,
+   "pass_at_0.70": 0.0082,
+   "pass_at_tierA": 0.0012
   },
   "block": {
-   "n": 4000,
-   "pass_at_tune_thr": 0.184,
-   "pass_at_0.70": 0.0112,
-   "pass_at_tierA": 0.0005
+   "n": 32229,
+   "pass_at_tune_thr": 0.1808,
+   "pass_at_0.70": 0.0077,
+   "pass_at_tierA": 0.001
   }
  },
  "pilot42_vs_v3": {

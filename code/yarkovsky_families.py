@@ -75,3 +75,42 @@ for label, centre, keep in (("centre = median of members", med, lambda n: True),
         out = prop[n][1] > centre[f]; pro = raw[n].get("sense") == 1
         N += 1; k += out == pro
     print(f"{label}: consistent {k}/{N} = {k / N:.3f}, p = {binom_tail(k, N):.1e}")
+
+
+# Referee pre-release: the right null keeps each family's sense mix and positions and only breaks their
+# association (permute senses within families); plus a 2x2 Fisher test, and the trend with distance
+# from the centre in units of the V-shape (|a - a_c| * D, D ~ 10^(-H/5)).
+rng = np.random.default_rng(0)
+mem = collections.defaultdict(list)                      # family -> [(outside?, prograde?, |da|*D)]
+for n in tierA:
+    f = fam.get(n)
+    if not f or f not in prop or n not in prop or n == f: continue
+    da = prop[n][1] - prop[f][1]
+    mem[f].append((da > 0, raw[n].get("sense") == 1, abs(da) * 10 ** (-0.2 * prop[n][0])))
+obs = sum(o == p for v in mem.values() for o, p, _ in v)
+Ntot = sum(len(v) for v in mem.values())
+sims = []
+for _ in range(20000):
+    k = 0
+    for v in mem.values():
+        o = np.array([x[0] for x in v]); p = rng.permutation(np.array([x[1] for x in v]))
+        k += int(np.sum(o == p))
+    sims.append(k)
+sims = np.array(sims)
+print(f"permutation null (senses shuffled within families): expected {sims.mean():.0f} +- {sims.std():.0f} of {Ntot} "
+      f"({sims.mean() / Ntot:.3f}); observed {obs} ({obs / Ntot:.3f}); z = {(obs - sims.mean()) / sims.std():.1f}; "
+      f"max of 20000 sims {sims.max()}")
+a = sum(o and p for v in mem.values() for o, p, _ in v); b = sum(o and not p for v in mem.values() for o, p, _ in v)
+c_ = sum((not o) and p for v in mem.values() for o, p, _ in v); d = sum((not o) and (not p) for v in mem.values() for o, p, _ in v)
+odds = (a * d) / (b * c_)
+print(f"2x2 (outside/inside x prograde/retrograde): [[{a},{b}],[{c_},{d}]], odds ratio {odds:.1f}")
+allv = [x for v in mem.values() for x in v]
+# trend: normalise |da|*D within each family by that family's median, then bin
+norm = []
+for v in mem.values():
+    m = np.median([x[2] for x in v])
+    norm += [(x[0] == x[1], x[2] / m) for x in v]
+norm = np.array(norm, dtype=float)
+for lo, hi in ((0, 0.5), (0.5, 1), (1, 2), (2, 1e9)):
+    s = norm[(norm[:, 1] >= lo) & (norm[:, 1] < hi)]
+    print(f"  |da|*D / family median in [{lo},{hi}): consistent {s[:, 0].mean():.3f} (n={len(s)})")

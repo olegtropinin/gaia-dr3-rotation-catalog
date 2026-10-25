@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: "Rotation periods and spin senses of asteroids from Gaia DR3 sparse photometry"
+message: "If you use this catalogue or the code, please cite it."
+type: dataset
+authors:
+  - family-names: Tropynin
+    given-names: Oleg
+    affiliation: "Independent researcher, Kazakhstan"
+repository-code: "https://github.com/olegtropinin/gaia-dr3-rotation-catalog"
+license: CC-BY-4.0
+version: v1.0.0
+date-released: 2026-10-25
+keywords:
+  - asteroid rotation
+  - Gaia DR3
+  - spin sense
+  - Yarkovsky effect
