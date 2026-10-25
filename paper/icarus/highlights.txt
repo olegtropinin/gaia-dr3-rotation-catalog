@@ -1,0 +1,6 @@
+Highlights
+- Rotation periods for 41,842 asteroids from Gaia DR3; 6,238 with high confidence
+- Confidence set by null tests; 89% correct on held-out known periods
+- Spin senses agree with published poles for 94-98% of asteroids
+- Spin senses reproduce the Yarkovsky segregation in asteroid families
+- 108 disputed LCDB periods and 861 candidate new periods are listed
