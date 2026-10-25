@@ -5,7 +5,7 @@
 
 \begin{document}
 
-\title{Rotation Periods and Spin Senses of Asteroids from Gaia DR3 Sparse Photometry, with Calibrated Reliability and Null Tests}
+\title{Rotation Periods and Spin Senses of Asteroids from Gaia DR3 Sparse Photometry: Calibrated Reliability, Yarkovsky Segregation in Families and Corrections to LCDB}
 
 \author{Oleg Tropynin}
 \affiliation{Independent researcher, Kazakhstan}
@@ -23,7 +23,11 @@ was taken from two null tests that destroy rotation but keep the Gaia sampling.
 On the test half, the 6{,}238 confident (tier A) periods are correct within 3\% in 89.3\% of cases (1303/1459),
 and in 95.4\% (354/371) where the reference period has quality $U\ge3-$. Many of the remaining disagreements
 are daily aliases in the ground-based reference periods. The spin sense agrees with published pole solutions
-in 98\% of cases. I list 861 tier-A periods with no published value in the sources checked; their expected
+in 98\% of cases. Inside collisional families, the senses separate as the Yarkovsky drift predicts: prograde
+rotators lie outside the parent's semimajor axis and retrograde ones inside it, for 74.8\% of 2{,}345 members
+($p\sim10^{-132}$). The same holds for 73.6\% of the 912 members that had no published pole. I identify 108
+periods in the current LCDB that are contradicted by this work and by independent data. Nine further periods
+of this kind were corrected in the 2023 LCDB revision, each to the value found here. I list 861 tier-A periods with no published value in the sources checked; their expected
 precision is about 90\%, and null tests limit noise to at most 3.7\%. The pipeline processes DR3 in about 20
 minutes on ten cores and is meant to run on Gaia DR4 on release day.
 \end{abstract}
@@ -184,6 +188,48 @@ The sense $s$ chosen by the PAB fit agrees with the hemisphere of published pole
 Poles within $20^\circ$ of the ecliptic and ambiguous pole pairs were excluded. The catalogue gives the sense
 for every tier-A asteroid: 3{,}677 retrograde and 2{,}561 prograde, of which 3{,}390 have no LCDB period.
 
+\subsection{The Yarkovsky effect in asteroid families}
+
+The Yarkovsky force makes prograde rotators drift outward and retrograde rotators drift inward. A
+collisional family therefore spreads into a V-shape in the plane of proper semimajor axis against
+$1/D$, with the two senses on opposite sides. I used family membership and synthetic proper elements from
+AstDyS (June 2024) and took the namesake's proper $a$ as the centre of each family. A member is consistent
+with the Yarkovsky effect if it is prograde and outside the centre, or retrograde and inside it.
+
+Of the 2{,}345 tier-A family members, 1{,}753 (74.8\%) are consistent. The binomial probability of this
+under the 50\% expected without the effect is $9\times10^{-133}$. The result does not depend on the choice
+of centre: with the median $a$ of all members it is 71.3\%. It also holds for the 912 members that have no
+pole in \citet{Durech2023}: 73.6\%, $p=7\times10^{-48}$. The largest families show the effect most
+clearly (Figure~\ref{fig:yark}):
+\begin{itemize}
+\item (221) Eos: 86\% of 578;
+\item (24) Themis: 81\% of 184;
+\item (15) Eunomia: 79\% of 294;
+\item (158) Koronis: 78\% of 184.
+\end{itemize}
+
+The spin sense is fitted from photometry alone, without information on family or semimajor axis, so this
+is an independent physical check of the senses. It also adds Yarkovsky constraints for hundreds of family
+members that had none.
+
+\begin{figure*}
+\plotone{fig4_yarkovsky.pdf}
+\caption{Four families in proper semimajor axis against $10^{0.2H}\propto1/D$. Grey: all AstDyS members.
+Blue: prograde. Orange: retrograde (tier~A, this work). Dashed line: the namesake. Each title gives the
+fraction of members whose side matches the Yarkovsky prediction.\label{fig:yark}}
+\end{figure*}
+
+\subsection{Errors in the reference database}
+
+I selected tier-A asteroids whose LCDB V4.0 period disagrees with this work but where either an independent
+survey supports this work and none supports LCDB \citep{Vavilov2025,McNeill2023,Erasmus2020}, or at least two
+other Gaia DR3 analyses do. This gives 117 asteroids: 43 with independent support and 74 with Gaia consensus;
+32 of the 117 are exact daily aliases.
+
+In the 2023 LCDB revision distributed by the JPL Small-Body Database, 9 of the 117 have already been corrected
+to the value found here. The other 108 are still present, 39 of them with independent support. The list is
+part of the catalogue.
+
 \subsection{New periods}
 
 942 tier-A asteroids have a period neither in LCDB nor in the six catalogues. For 81 of them a rotation period
@@ -247,12 +293,12 @@ tier-A threshold.\label{fig:thr}}
 
 \section{Data availability}
 
-The catalogue (41{,}842 rows, with spin senses), the list of 861 new periods, the validation tables and the
+The catalogue (41{,}842 rows, with spin senses), the list of 861 new periods, the list of suspected LCDB errors, the validation tables and the
 code will be archived on Zenodo [DOI to be assigned].
 
 \begin{acknowledgments}
 This work used data from the ESA mission Gaia, processed by the Gaia DPAC; JPL Horizons and the JPL Small-Body
-Database; LCDB; DAMIT; and VizieR (CDS, Strasbourg). The analysis was designed, coded and checked with the help
+Database; LCDB; DAMIT; AstDyS; and VizieR (CDS, Strasbourg). The analysis was designed, coded and checked with the help
 of an AI assistant (Claude, Anthropic) under the author's direction. Two rounds of AI-based referee review were
 used to stress-test the validation.
 \end{acknowledgments}

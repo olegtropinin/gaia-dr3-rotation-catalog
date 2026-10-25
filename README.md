@@ -17,6 +17,18 @@ All numbers are in `validation/stats_final.json`.
 - Each tier-A period comes with a spin sense (prograde or retrograde). It agrees with published pole
   solutions for **98 %** of asteroids in Durech & Hanus 2023 and **97.5 %** in DAMIT.
 
+**Physical check: the Yarkovsky effect.** The spin senses reproduce the Yarkovsky drift. Inside
+collisional families, prograde rotators should lie outside the parent's semimajor axis and retrograde
+rotators inside it.
+- All family members with a spin sense: 74.8 % (1753/2345) behave this way, against 50 % expected
+  without the effect (p ~ 1e-132).
+- The 912 asteroids that had no previously published pole: 73.6 % (p ~ 1e-48).
+
+**108 likely errors in LCDB.** For 108 periods still in the current LCDB/JPL SBDB, our period is supported
+by an independent survey or by other Gaia analyses, and the LCDB value is not. Many are daily aliases.
+Nine more periods flagged by the same test have already been corrected in the 2023 LCDB revision, each to
+our value.
+
 **861 tier-A periods with no published value** in any source we checked:
 - expected precision about 90 %;
 - noise from the null tests: at most 3.7 % of this list.
@@ -27,6 +39,7 @@ All numbers are in `validation/stats_final.json`.
 |---|---|---|
 | `data/gaia_dr3_rotation_periods.csv` | 41,842 | every solved asteroid, with tier, probability, spin sense and flags |
 | `data/novel_tierA.csv` | 861 | tier-A periods with no published period found in the sources checked |
+| `data/lcdb_suspect_periods.csv` | 117 | LCDB V4.0 periods contradicted by this work plus independent support (with current SBDB status) |
 | `validation/stats_final.json` | | every number quoted here, computed from the catalogue |
 | `validation/report.json`, `lit_report.json` | | calibration report, literature comparison |
 | `validation/REVIEW_BRIEF*.md` | | the briefs given to the independent referees (rounds 1 and 2) |
@@ -175,6 +188,51 @@ Durech & Hanus:
 |---|---|---|
 | 2-5 h | 9e-5 | 6e-6 |
 | 10-30 h | 3e-4 | 7e-5 |
+
+## The Yarkovsky effect in families
+
+Families come from AstDyS (`all_tro.members`, proper elements `all.syn`, June 2024). A family's centre
+is the proper semimajor axis of its namesake. A member is counted as Yarkovsky-consistent if it is
+prograde and lies outside the centre, or retrograde and lies inside it. Without a Yarkovsky effect,
+50 % of members would be consistent.
+
+| Sample | Consistent | p (binomial) |
+|---|---|---|
+| All tier-A family members | **1753/2345 = 74.8 %** | 9e-133 |
+| Centre = median of all members instead | 1671/2345 = 71.3 % | 3e-97 |
+| Members without a pole in Durech & Hanus 2023 | 671/912 = 73.6 % | 7e-48 |
+
+| Family | Consistent | Members |
+|---|---|---|
+| (221) Eos | 86 % | 578 |
+| (24) Themis | 81 % | 184 |
+| (15) Eunomia | 79 % | 294 |
+| (158) Koronis | 78 % | 184 |
+| (10) Hygiea | 70 % | 97 |
+| (4) Vesta | 67 % | 150 |
+
+Two families have a fraction below 50 %: (93) Minerva and (375) Ursula. Their namesakes are probably
+not at the V-shape centre.
+
+See `paper/fig4_yarkovsky.png`.
+
+The spin sense was fitted from photometry alone and knows nothing about family membership or semimajor
+axis. The family test is therefore an independent physical check of the senses. It also shows that the
+912 new senses carry real information.
+
+## Likely errors in LCDB
+
+`data/lcdb_suspect_periods.csv` lists 117 tier-A asteroids whose LCDB V4.0 period disagrees with ours. In
+each case either:
+- an independent survey supports our period and none supports LCDB (43 cases: TESS from Vavilov & Carry
+  or McNeill et al., or ATLAS from Erasmus et al.); or
+- at least two other Gaia DR3 analyses support it (74 cases).
+
+Of these, 32 are exact daily aliases and 14 are factor-2 differences.
+
+Status in today's JPL SBDB (LCDB revision 2023):
+- 9 have already been corrected to our value;
+- **108 are still in the database**, 39 of them with independent support.
 
 ## Comparison with other catalogues
 
