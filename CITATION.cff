@@ -8,7 +8,8 @@ authors:
     affiliation: "Independent researcher, Kazakhstan"
 repository-code: "https://github.com/olegtropinin/gaia-dr3-rotation-catalog"
 license: CC-BY-4.0
-version: v1.0.0
+doi: 10.5281/zenodo.23638281
+version: v1.0.1
 date-released: 2026-10-25
 keywords:
   - asteroid rotation
