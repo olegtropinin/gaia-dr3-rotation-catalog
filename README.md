@@ -51,7 +51,7 @@ axis and retrograde rotators inside it.
 Columns:
 - `period_h`, `period_err_h`: the period and its 1-sigma error (see *Period errors*).
 - `tier`: `A` = confident. `B` = probable, but B is **not** reliable for asteroids without a known
-  period: 18 % of signal-free asteroids reach it in the null test.
+  period: 18-20 % of signal-free asteroids reach it in the null tests.
 - `prob_correct`: probability that the period is correct within 3 %, fitted on TUNE and checked on TEST.
 - `spin_sense`: `prograde` or `retrograde`, given for tier A only.
 - `slow_candidate`: the best period is 100-1000 h. Such periods are never confident, because only about
@@ -110,7 +110,7 @@ projected number of noise periods.
 
 | Threshold | White pass | Block pass | Share of the 861 candidates (95 % upper limit) |
 |---|---|---|---|
-| 0.384 (TUNE 80 % precision) | 19.8 % | 18.4 % | — |
+| 0.384 (TUNE 80 % precision) | 20.0 % | 18.1 % | — |
 | 0.70 | 264 | 248 | — |
 | 0.75 | 104 | 108 | — |
 | **0.80 (tier A)** | **39** | **32** | **3.7-4.5 % (5.9 %)** |
