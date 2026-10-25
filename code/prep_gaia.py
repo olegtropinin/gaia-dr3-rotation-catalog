@@ -9,7 +9,7 @@ import csv, glob, gzip, os, sys, time
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, "data", "gaia_sso", "SsoObservation_*.csv.gz")
+SRC = os.environ.get("GAIA_SSO_GLOB", os.path.join(HERE, "data", "gaia_sso", "SsoObservation_*.csv.gz"))
 OUT = os.path.join(HERE, "data", "transits.npz")
 GAIA_EPOCH0 = 2455197.5
 

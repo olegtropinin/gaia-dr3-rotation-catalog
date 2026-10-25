@@ -16,7 +16,7 @@ TOL = 0.03
 # inside the uncatalogued subset, for both nulls (residuals permuted within seasons, and permuted in 1-day
 # blocks that keep correlated systematics). Null pass rates at 0.70 / 0.80: 0.85 % / 0.10 % (white),
 # 1.12 % / 0.05 % (block); x 32,229 solved unknowns -> at most 274-363 vs 32 noise periods. Hence 0.80.
-CONF_PROB_MIN = 0.80
+CONF_PROB_MIN = float(os.environ.get("CONF_PROB_MIN", 0.80))   # run_release.sh passes the value from choose_threshold.py
 # The chi2-curvature error ignores residual model error. With the PAB correction (v3) the median |dP/P| against
 # Durech & Hanus 2023 (sidereal, same data) is 3.9e-5 (v2 without PAB: 1.6e-4); a systematic term of 5.5e-5 P in
 # quadrature gives median |dP|/sigma ~0.67 (Gaussian: 0.674) on both halves of a split.

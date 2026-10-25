@@ -273,16 +273,32 @@ both rounds.
 - fixing the novelty units and the wobble-period confusion;
 - the coefficient-2 test.
 
-## Reproduce
+## Reproduce, and the Gaia DR4 run
 
-1. `code/prep_gaia.py`
-2. `PIPELINE_PAB=1 code/pipeline.py --workers 10` (about 20 min on 10 cores)
-3. `code/calibrate2.py`
-4. `compare_lit.py`, `make_new.py`, `tally_novelty.py`, `stats_final.py`, `make_figures.py`
+To rerun the whole pipeline, from bulk files to a validated catalogue:
 
-Null tests:
-- add `PIPELINE_NULL=1`, plus `PIPELINE_NULL_BLOCK=1.0` for the block version;
-- use `PIPELINE_RESULTS=results_null[_block]` and `--only-file <list>`.
+```bash
+RELEASE_PREFIX=Gaia/gdr3/Solar_system/sso_observation/ WORKERS=10 code/run_release.sh
+```
+
+The script runs these steps:
+1. fetch the bulk files;
+2. build the transits;
+3. run the PAB period search;
+4. run the white and block null tests;
+5. choose the tier-A threshold with `choose_threshold.py`. The rule is fixed in advance: noise at most
+   5 % of the uncatalogued tier A, on a 0.05 grid;
+6. calibrate on TUNE and build the catalogue;
+7. compare with the literature and select new candidates;
+8. compute the statistics and draw the figures.
+
+A dry run on DR3 that reused the transit file took 21 min on 12 cores. It reproduced the catalogue exactly:
+41,842 of 41,842 rows have the same period and tier, and the threshold came out at 0.80.
+
+For DR4, only `RELEASE_PREFIX` should need to change. Check the DR4 file layout and column names first.
+
+`code/run_release.sh` does not run the novelty searches beyond the six catalogues. Run them separately:
+`novelty_vizier.py`, `novelty_catalogs.py`, `mpb_check.py`, then `tally_novelty.py`.
 
 ## Acknowledgements
 
