@@ -1,0 +1,72 @@
+number,period_h,prior_period_h,relation_ours_to_prior,dlcfreq_cpd,status,source,amplitude_mag,prob_correct,spin_sense,ssodnet_value_hidden_by_jpl
+2497,77.78427,77.78,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.507,0.876,retrograde,0
+4187,4.15666,4.1694,match,0.035,prior_confirmed,SsODNet (bibref unknown: ssoCard unreachable),0.333,0.987,retrograde,0
+4462,11.49989,11.5002,match,0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.374,0.856,retrograde,0
+5618,4.71494,4.7698,match,0.117,prior_confirmed,SsODNet (bibref unknown: ssoCard unreachable),0.509,0.925,retrograde,0
+6609,5.31227,5.314,match,0.003,prior_confirmed,"JPL SBDB (LCDB rev. 2023-Oct): [Wiles, M. (2023) Minor Planet Bull. 50, 290-294.]",0.605,0.858,retrograde,1
+6612,3.23514,3.2355,match,0.002,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.425,0.952,prograde,0
+6691,4.12838,2.06418,ours_2x,-11.627,prior_disputed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.875,0.951,prograde,0
+6747,6.0115,5.9534,match,-0.078,prior_confirmed,SsODNet (bibref unknown: ssoCard unreachable),0.809,0.981,retrograde,0
+6800,3.42978,3.42979,match,0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.533,0.949,prograde,0
+6993,3.897,3.89698,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.334,0.91,retrograde,0
+7518,10.81068,10.81235,match,0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.66,0.899,retrograde,0
+7680,3.77371,3.7737,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.359,0.984,retrograde,0
+8521,2.95395,2.95397,match,0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.402,0.958,prograde,0
+8546,2.75644,2.756423,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.365,0.889,retrograde,0
+10393,3.71943,3.746,match,0.092,prior_confirmed,SsODNet (bibref unknown: ssoCard unreachable),0.461,0.826,retrograde,0
+10716,15.9458,16.0656,match,0.022,prior_confirmed,SsODNet (bibref unknown: ssoCard unreachable),0.517,0.911,prograde,0
+11011,4.04596,4.0462,match,0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.799,0.916,retrograde,0
+11161,6.06299,6.06363,match,0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.906,0.89,retrograde,0
+11389,3.51451,3.51452,match,0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.414,0.875,retrograde,0
+11857,19.71773,19.7181,match,0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.417,0.993,retrograde,0
+11874,4.48181,1.02,differ,-36.349,prior_low_quality,"JPL SBDB (LCDB rev. 2023-Oct): [lower-limit; Incomplete or inconclusive result.]  [Erasmus, N.; McNeill, A.; Mommert, M.; Trilling, D.E.; et al. (2018) Ap. J. Suppl. Series 237, A19.], [Erasmus, N.; McNeill, A.; Mommert, N.; Trilling, D.E.; et al. (2019) Ap. J. Suppl. Series 242, A15.]",0.919,0.97,retrograde,1
+11894,3.33037,3.331,match,0.003,prior_confirmed,"JPL SBDB (LCDB rev. 2023-Oct): [Result based on less than full coverage, so that the period may be wrong by 30 percent or so.]  [Casalnuovo, G.B. (2021) Minor Planet Bull. 48, 107.]",0.314,0.862,retrograde,1
+12017,18.2234,8.4,differ,-3.08,prior_disputed,"JPL SBDB (LCDB rev. 2023-Oct): [Result based on less than full coverage, so that the period may be wrong by 30 percent or so.]  [Behrend, R. (2023) Observatoire de Geneve web site, http://obswww.unige.ch/~behrend/page_cou.html]",0.985,0.866,prograde,1
+12448,7.79769,3.8992,ours_2x,-6.155,prior_disputed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.861,0.948,retrograde,0
+12570,3.38215,3.3819,match,-0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.362,0.984,retrograde,0
+12586,9.63974,4.8202,ours_2x,-4.979,prior_disputed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",1.016,0.932,prograde,0
+12856,6.68839,6.6883,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.65,0.952,retrograde,0
+13421,4.73118,2.36562,ours_2x,-10.145,prior_disputed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.616,0.955,retrograde,0
+14707,8.11259,12.17,ours_2/3,1.973,prior_disputed,SsODNet (bibref unknown: ssoCard unreachable),0.347,0.922,prograde,0
+15033,5.68631,4.596,alias_day_-2,-2.003,prior_disputed,SsODNet (bibref unknown: ssoCard unreachable),0.307,0.966,retrograde,0
+15321,18.20299,9.104,ours_2x,-2.635,prior_disputed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.561,0.88,retrograde,0
+15705,2.78822,2.78823,match,0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.521,0.876,prograde,0
+15939,16.99175,18.5217,differ,0.233,prior_disputed,SsODNet (bibref unknown: ssoCard unreachable),0.248,0.959,retrograde,0
+15998,5.94932,5.94932,match,0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.984,0.998,retrograde,0
+16400,19.69108,19.6976,match,0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",1.138,0.943,retrograde,0
+17016,3.95592,3.95588,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.454,0.829,prograde,0
+18016,4.34537,4.3309,match,-0.037,prior_confirmed,SsODNet (bibref unknown: ssoCard unreachable),0.486,0.949,prograde,0
+19936,75.86261,75.956,match,0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.668,0.906,retrograde,0
+21490,3.03007,3.03,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.446,0.948,retrograde,0
+22059,5.75656,6.543,alias_day_+1,1.002,prior_disputed,SsODNet (bibref unknown: ssoCard unreachable),0.212,0.846,retrograde,0
+22459,18.53354,18.539,match,0.001,prior_confirmed,SsODNet (bibref unknown: ssoCard unreachable),0.549,0.814,retrograde,0
+22464,8.72481,8.72471,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.624,0.901,retrograde,0
+25388,40.63753,40.669,match,0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.729,0.932,retrograde,0
+25719,39.38904,19.4,ours_2x,-1.256,prior_low_quality,"JPL SBDB (LCDB rev. 2023-Oct): [Result based on fragmentary lightcurve(s), may be completely wrong.]  [Pravec, P.; Wolf, M.; Sarounova, L. (2012) http://www.asu.cas.cz/~ppravec/neo.htm]",0.875,0.942,retrograde,1
+26327,3.20513,3.0039,alias_day_-1,-1.003,prior_disputed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.314,0.875,retrograde,0
+27270,3.54948,2.6,differ,-4.938,prior_low_quality,"JPL SBDB (LCDB rev. 2023-Oct): [Result based on fragmentary lightcurve(s), may be completely wrong.]  [Galad, A.; Kornos, L. (2008) Minor Planet Bull. 35, 144-146.]",0.285,0.834,retrograde,1
+28335,4.99376,8.8726,differ,4.202,prior_disputed,SsODNet (bibref unknown: ssoCard unreachable),0.498,0.973,prograde,0
+28456,3.61771,3.617712,match,0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.749,0.996,retrograde,0
+29189,5.23689,5.2369,match,0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.444,0.96,retrograde,0
+31004,20.37285,35.428,alias_day_+1,1.001,prior_disputed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.686,0.98,retrograde,0
+31405,3.40468,3.4047,match,0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.492,0.857,prograde,0
+32319,9.80223,4.9016,ours_2x,-4.896,prior_disputed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.482,0.809,prograde,0
+34751,4.73685,9.8056,differ,5.238,prior_disputed,SsODNet (bibref unknown: ssoCard unreachable),0.745,0.96,retrograde,0
+34767,2.90967,2.90951,match,-0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.31,0.882,retrograde,0
+35217,20.78478,14.49,alias_day_-1,-1.003,prior_disputed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.626,0.816,retrograde,0
+38172,6.85474,5.99757,alias_day_-1,-1.001,prior_disputed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.839,0.853,prograde,0
+41331,3.2956,3.296,match,0.002,prior_confirmed,"JPL SBDB (LCDB rev. 2023-Oct): [Casalnuovo, G.B. (2021) Minor Planet Bull. 48, 108-109.]",0.441,0.837,retrograde,1
+43831,3.07342,3.0734,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.362,0.994,retrograde,0
+45076,5.91951,5.919,match,-0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.68,0.85,prograde,0
+47066,5.08846,5.0892,match,0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.606,0.919,prograde,0
+51988,4.98064,4.9803,match,-0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.523,0.879,prograde,0
+59664,82.35199,82.29,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.587,0.897,retrograde,0
+61303,4.63544,4.62,match,-0.035,prior_low_quality,"JPL SBDB (LCDB rev. 2023-Oct): [Result based on fragmentary lightcurve(s), may be completely wrong.]  [Chang, C.-K.; Ip, W.-H.; Cheng, Y.-C.; Ngeow, C.-C.; et al. (2014) Astrophys. J. 788, A17.]",0.887,0.947,prograde,1
+85807,12.58218,18.872,ours_2/3,1.271,prior_disputed,SsODNet (bibref unknown: ssoCard unreachable),0.539,0.942,retrograde,0
+85950,8.20779,8.20777,match,-0.0,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.759,0.915,retrograde,0
+92874,12.33197,12.329,match,-0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.766,0.887,retrograde,0
+94688,5.16842,5.1689,match,0.001,prior_confirmed,SsODNet (bibref unknown: ssoCard unreachable),0.513,0.893,retrograde,0
+96889,7.06103,7.0617,match,0.001,prior_confirmed,"SsODNet = Durech et al. 2022, Front. Astron. Space Sci. 9, 809771 (ATLAS)",0.714,0.863,retrograde,0
+97573,47.23656,46.9182,match,-0.007,prior_confirmed,SsODNet (bibref unknown: ssoCard unreachable),0.653,0.976,retrograde,0
+113687,11.25121,11.249,match,-0.001,prior_confirmed,SsODNet (bibref unknown: ssoCard unreachable),0.562,0.91,retrograde,0
+133862,20.50665,4.414,differ,-8.534,prior_low_quality,"JPL SBDB (LCDB rev. 2023-Oct): [Result based on fragmentary lightcurve(s), may be completely wrong.]  [Duffard, R. Melita, M.; Ortiz, J.; Licandro, J.; et al. (2008) ACM 2008, 8187.]",0.579,0.929,retrograde,1
