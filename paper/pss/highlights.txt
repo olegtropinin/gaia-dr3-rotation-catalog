@@ -1,0 +1,5 @@
+Calibrated Gaia DR3 periods for 6,238 asteroids, 89% correct on held-out LCDB
+Spin senses agree with independent ATLAS poles for 96%; 2,270 have no prior pole
+Spin senses reproduce Yarkovsky segregation in families: 75% vs 52% null
+108 LCDB periods disputed, 39 of them contradicted by independent surveys
+790 candidate new periods absent from SsODNet, with noise below 5%

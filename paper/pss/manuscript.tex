@@ -1,0 +1,80 @@
+\documentclass[preprint,12pt,authoryear]{elsarticle}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{lineno}
+\newcommand{\dataset}[2][]{\url{#2}}
+
+\journal{Planetary and Space Science}
+
+\begin{document}
+
+\linenumbers
+
+\begin{frontmatter}
+
+\title{Rotation periods and spin senses of asteroids from Gaia DR3 sparse photometry: calibrated reliability, null tests and disputed LCDB periods}
+
+\author{Oleg Tropynin}
+\ead{tropininoleg@gmail.com}
+\address{Independent researcher, Karaganda, Kazakhstan}
+
+\begin{abstract}
+I derive rotation periods and spin senses for numbered asteroids with at least 25 Gaia DR3 transits,
+giving 41{,}842 solutions. The model fits one brightness level per observing season, a linear phase term
+and a second-order Fourier series, with the rotational phase corrected for the phase-angle bisector under
+both senses of rotation. Known LCDB periods are split into a tuning half and a test half. A logistic
+model of the probability that a period is correct is fitted on the first, and the confidence threshold
+comes from null tests that keep the Gaia sampling but remove rotation. 6{,}238 periods reach the
+confident tier. On the test half 89.3\% of them are correct within 3\%, and 95.4\% where the reference
+quality is $U\ge3-$; injected lightcurves are recovered with 96--99\% precision. Against independent ATLAS
+data, 92.5\% of the periods and 96.4\% of the spin senses agree. 2{,}270 spin senses are for asteroids
+without a published pole. The senses reproduce the Yarkovsky segregation in collisional families: 74.8\% of
+2{,}345 members lie on the predicted side, against $52.4\pm0.9\%$ when senses are permuted within families.
+I identify 108 LCDB periods contradicted by independent survey data (39) or disputed by agreement among
+Gaia DR3 analyses (69). Finally, 790 confident periods appear in none of the sources searched, including
+SsODNet; at most 4.5\% of them are noise, and about a quarter may be harmonics or aliases.
+\end{abstract}
+
+\begin{keyword}
+Asteroids \sep Rotation \sep Photometry \sep Gaia \sep Yarkovsky effect \sep Lightcurves
+\end{keyword}
+
+\end{frontmatter}
+
+\input{body}
+
+\section*{CRediT authorship contribution statement}
+\textbf{Oleg Tropynin:} Conceptualization, Methodology, Software, Validation, Formal analysis, Investigation,
+Data curation, Writing -- original draft, Writing -- review \& editing, Visualization.
+
+\section*{Declaration of competing interest}
+The author declares that he has no known competing financial interests or personal relationships that could
+have appeared to influence the work reported in this paper.
+
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in the public, commercial, or
+not-for-profit sectors.
+
+\section*{Declaration of generative AI use}
+During the preparation of this work the author used Claude (Anthropic) to write and run analysis code and
+to draft and edit the text. After using this tool, the author reviewed and edited the content as needed and
+takes full responsibility for the content of the published article.
+
+\section*{Data availability}
+The catalogue (41{,}842 rows with periods, probabilities, tiers and spin senses), the list of 790 candidate
+new periods with the prior periods found for the other 152, the list of disputed LCDB periods, the
+validation tables and the full code are openly available on Zenodo, doi:10.5281/zenodo.23638281, and at
+\url{https://github.com/olegtropinin/gaia-dr3-rotation-catalog}.
+
+\section*{Acknowledgements}
+This work has made use of data from the European Space Agency (ESA) mission Gaia
+(\url{https://www.cosmos.esa.int/gaia}), processed by the Gaia Data Processing and Analysis Consortium (DPAC,
+\url{https://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding for the DPAC has been provided by national
+institutions, in particular the institutions participating in the Gaia Multilateral Agreement. It also used
+the JPL Horizons system and Small-Body Database, the LCDB, DAMIT, AstDyS, SsODNet (IMCCE) and VizieR (CDS, Strasbourg).
+
+\input{bib}
+
+\end{document}
