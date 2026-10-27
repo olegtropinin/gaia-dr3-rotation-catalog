@@ -72,13 +72,13 @@ On TUNE I fitted the doubling rule and a logistic model of the probability that 
 seven features are the $\chi^2$ gain over the no-rotation fit, the separation from the next minimum that
 is not an alias of the best one, the number of transits, the amplitude, the reduced $\chi^2$, the period
 and the ratio of the two harmonics. On TEST, the predicted probabilities follow the observed fractions
-(Figure~\ref{fig:rel}), except that the top bin is overconfident: 0.95 predicted against 0.89 observed. The
+(Figure~\ref{fig:rel}), except that the top bin (0.85--1) is overconfident: 0.95 predicted against 0.89 observed. The
 probability is therefore best read as a ranking with an approximate scale.
 
 \begin{figure}
 \centering\includegraphics[width=0.95\linewidth]{fig2_reliability.pdf}
-\caption{Reliability diagram on TEST for all solutions. Bars are 95\% binomial intervals; numbers give the
-count per bin.\label{fig:rel}}
+\caption{Reliability diagram on TEST for all solutions, in probability bins with edges 0, 0.3, 0.5, 0.7,
+0.85 and 1. Bars are 95\% binomial intervals; numbers give the count per bin.\label{fig:rel}}
 \end{figure}
 
 The confidence threshold was not chosen on TEST. Two null tests use the real Gaia sampling but remove the
@@ -126,7 +126,8 @@ flagged as slow candidates and never treated as confident.
 
 6{,}238 periods reach tier~A. On TEST, 1303 of 1459 tier-A periods are correct: 89.3\% (95\% interval
 87.6--90.8\%); 90\%, 88\% and 83\% at 2--10, 10--30 and 30--100\,h (Figure~\ref{fig:lcdb}). With tighter
-tolerances the figure is 87.9\% within 1\% and 82.7\% within 0.3\%. It depends on the quality of the
+tolerances the figure is 87.9\% within 1\% and 82.7\% within 0.3\%. 1{,}680 tier-A periods are absent from
+all three earlier DR3 analyses \citep{Durech2023,Cellino2024,MacLennan2026}. It depends on the quality of the
 reference: 354 of 371 (95.4\%, 92.8--97.1\%) for $U\ge3-$, 935 of 1049 (89.1\%) for $U=2$ and $2+$, and 14 of
 39 for $U=2-$; without $U=2-$ it is 90.8\%.
 
@@ -202,9 +203,9 @@ retrograde and 28 the reverse. It agrees for 3802 of 3899 (97.5\%) with DAMIT \c
 (94.4\%) with DAMIT asteroids not in \citet{Durech2023}, and 374 of 388 (96.4\%, 94.0--97.8\%) with the poles
 that \citet{Durech2020} derived from ATLAS photometry alone, 130 of 137 for those not in \citet{Durech2023}.
 
-Accuracy depends on pole latitude, as expected from Section~\ref{sec:model}. Against \citet{Durech2023} it is 98.7\%
-(3326/3371) for $|\beta|\ge40^\circ$, 78\% (86/110) for $20^\circ\le|\beta|<40^\circ$ and 9 of 16 below
-$20^\circ$. Tier~A favours poles far from the ecliptic: among asteroids with poles in \citet{Durech2023},
+Accuracy depends on pole latitude, as expected from Section~\ref{sec:model}. Against \citet{Durech2023},
+with the lower $|\beta|$ of the two pole solutions, it is 98.7\% (3323/3366) for $|\beta|\ge40^\circ$, 88.8\%
+(150/169) for $20^\circ\le|\beta|<40^\circ$, and 13 of 27 for the excluded poles below $20^\circ$. Tier~A favours poles far from the ecliptic: among asteroids with poles in \citet{Durech2023},
 $|\beta|<30^\circ$ for 1.7\% of tier-A members and 15.5\% of the others, probably because such poles give
 large amplitudes in every season. Most tier-A senses therefore belong to high-$|\beta|$ poles, but the
 accuracy of an individual sense with an unknown pole cannot be guaranteed.
@@ -229,7 +230,8 @@ proper $a$ of the namesake as each family's centre $a_c$. A member is consistent
 outside the centre, or retrograde and inside it. The null hypothesis keeps each family's mix of senses and
 its positions and breaks only the link between them, so I permuted the senses within each family 20{,}000
 times. 1{,}753 of 2{,}345 tier-A members (74.8\%) are consistent, against $52.4\pm0.9\%$ under the null
-($z=24.7$; no permutation reaches the observed value; odds ratio 9.1). Without Eos, which dominates, the
+($z=24.7$; no permutation reaches the observed value). In the $2\times2$ table of side (outside, inside)
+against sense (prograde, retrograde) the odds ratio is 9.1. Without Eos, which dominates, the
 fraction is 71.1\%. With $d=|a-a_c|\,10^{-0.2H}$, a distance in units of the V-shape that removes the $1/D$
 dependence of the drift, normalised by each family's median, the fraction rises from 58\% ($d<0.5$) to 75\%
 (0.5--1), 82\% (1--2) and 82\% ($d\ge2$). With the median $a$ of all members as centre it is 71.3\%; for the
@@ -336,7 +338,7 @@ VizieR were not searched.
 152 of the 942 (16.1\%) have a period in one of these sources, including five whose LCDB entry has
 $U=1$ or only a lower limit. For the 66 of them with a prior period from the last three sources and
 $U\ne1$, this work agrees in 48 (73\%, 61--82\%), against 93.9\% for the rest of tier~A compared with the
-same sources; against \citet{Durech2022} alone the figures are 35 of 46 (76\%) and 93.2\%. Most
+same sources (\citet{Durech2022}, the current JPL SBDB and the SsODNet snapshot); against \citet{Durech2022} alone the figures are 35 of 46 (76\%) and 93.2\%. Most
 disagreements are simple relations (7 periods twice the prior one, 6 daily aliases, 2 at 3/2). Periods from
 the same Gaia data \citep{Durech2023,Cellino2024,MacLennan2026} count against novelty but never as
 confirmation.
@@ -345,8 +347,8 @@ The remaining 790 are candidate new periods: 617 at 2--10\,h, 116 at 10--30\,h a
 estimates bracket their reliability. TEST precision reweighted to the candidates' distribution of
 probability, amplitude and number of transits is 87\%. Agreement with prior periods for the 66 comparable
 asteroids is 73\%. The two differ, probably because asteroids without published periods are harder cases
-than the covariates capture. Between about 60\% and 87\% of the 790 periods are therefore expected to be
-correct; noise accounts for 4--5\%, and most of the rest are likely harmonics or aliases of the true period.
+than the covariates capture. Between about 61\%, the lower 95\% bound of the agreement rate, and 87\% of the 790 periods are therefore
+expected to be correct; noise accounts for 4--5\%, and most of the rest are likely harmonics or aliases of the true period.
 For each candidate the catalogue gives the second-best period. The list is a set of targets for
 dense-lightcurve observers, biased to large amplitudes, high $|\beta|$ and periods above 2\,h; it is not a
 population sample. An earlier release of the catalogue listed 861 candidates before the last three sources
@@ -376,6 +378,6 @@ From Gaia DR3 sparse photometry alone, 6{,}238 asteroid rotation periods reach a
 probability and a spin sense; the senses agree with independent ATLAS poles for 96\% and reproduce the
 Yarkovsky segregation in families. For asteroids without a published period, the error rate is higher than
 for known ones, and this paper measures by how much: 790 candidate new periods carry an estimated 4--5\%
-noise, and a further 8--36\% are probably harmonics or aliases. Observers can use the candidate list and the 39
-LCDB periods contradicted by survey data as target lists; modellers can use the 1{,}447 new senses with the
+noise, and a further 8--35\% are probably harmonics or aliases. Observers can use the candidate list and the 39
+LCDB periods that disagree with survey data as target lists; modellers can use the 1{,}447 new senses with the
 latitude caveat. The same pipeline, thresholds and null tests are ready for Gaia DR4.

@@ -1,6 +1,6 @@
 # Rotation periods and spin senses of asteroids from Gaia DR3 sparse photometry
 
-Status: **released v1.0.x**, DOI [10.5281/zenodo.23638281](https://doi.org/10.5281/zenodo.23638281) (all versions). Manuscript in preparation for A&A. This is version 3 of the method first piloted in
+Status: **released v1.0.x**, DOI [10.5281/zenodo.23638281](https://doi.org/10.5281/zenodo.23638281) (all versions). Manuscript submitted to Planetary and Space Science (revised after Icarus declined it for novelty; source in `paper/pss/`). This is version 3 of the method first piloted in
 [gaia-asteroid-periods](https://github.com/olegtropinin/gaia-asteroid-periods) (600 asteroids; RNAAS
 submission AAS82759). It now runs on every numbered asteroid with at least 25 Gaia DR3 transits.
 Author: Oleg Tropynin, independent researcher, Kazakhstan.
@@ -14,11 +14,16 @@ All numbers are in `validation/stats_final.json`.
 **Tier A (confident): 6,238 periods.**
 - Held-out TEST asteroids: 89.3 % correct (1303/1459).
 - TEST asteroids whose LCDB period has quality U >= 3-: **95.4 %** (354/371).
+- Against independent ATLAS periods (Durech et al. 2022, not in VizieR): **92.5 %** (1088/1176).
+- 1,680 tier-A periods are absent from the three earlier Gaia DR3 analyses.
 - Each tier-A period comes with a spin sense (prograde or retrograde). It agrees with published pole
-  solutions for **98 %** of asteroids in Durech & Hanus 2023 and **97.5 %** in DAMIT.
+  solutions for **98 %** of asteroids in Durech & Hanus 2023, **97.5 %** in DAMIT and **96.4 %** for the
+  ATLAS-only poles of Durech et al. 2020 (|beta| >= 20 deg). Accuracy falls for poles near the ecliptic
+  (98.7 % for |beta| >= 40 deg, 88.8 % for 20-40 deg). 1,447 tier-A asteroids have no pole in six pole
+  catalogues (Durech & Hanus 2023, DAMIT, Cellino 2024, MacLennan 2026, Durech 2020, Durech 2016).
 
 **Physical check: Yarkovsky segregation in families.** The spin senses reproduce the known Yarkovsky
-segregation in families (Hanus et al. 2013, 2018): prograde rotators lie outside the parent's semimajor
+segregation in families (Hanus et al. 2013, 2018; shown from Gaia DR3 by Durech & Hanus 2023): prograde rotators lie outside the parent's semimajor
 axis and retrograde rotators inside it.
 - 74.8 % of 2,345 family members are on the predicted side. Permuting the senses within each family gives
   52.4 ± 0.9 %, so the excess is z = 24.7.
@@ -26,21 +31,25 @@ axis and retrograde rotators inside it.
 - The 912 members with no pole in Durech & Hanus 2023 extend the known samples, at 73.6 %.
 
 **108 disputed LCDB periods** in the 2023 LCDB revision distributed by JPL SBDB.
-- 39 are disputed by independent survey data (TESS, ATLAS).
-- 69 rest on agreement among Gaia DR3 analyses only.
+- 39 disagree with independent survey data (TESS, ATLAS); they are listed in Table 3 of the manuscript.
+- 69 are only flagged: they rest on agreement among Gaia DR3 analyses, which share the sampling.
 - Nine more periods flagged by the same test were already revised in that LCDB revision, each to the value
   found here.
 
-**861 candidate new periods (tier A)** in any source we checked:
-- expected precision about 90 %;
-- noise from the null tests: 3.7-4.5 % of this list (95 % upper limit 5.9 %).
+**790 candidate new periods (tier A)** with no period found in any source checked, including SsODNet
+(file `data/novel_tierA_v2.csv`; the earlier list of 861 is kept as `data/novel_tierA.csv`):
+- noise from the null tests: 4.1-4.9 % of this list (95 % upper limits 5.4-6.5 %);
+- expected correct: 60-87 % (agreement with prior periods where they exist, 48/66 = 73 %; TEST precision
+  reweighted to the candidates, 87 %); most of the rest are probably harmonics or aliases.
 
 ## Contents
 
 | File | Rows | Content |
 |---|---|---|
 | `data/gaia_dr3_rotation_periods.csv` | 41,842 | every solved asteroid, with tier, probability, spin sense and flags |
-| `data/novel_tierA.csv` | 861 | tier-A periods with no published period found in the sources checked |
+| `data/novel_tierA_v2.csv` | 790 | tier-A periods with no published period found in the sources checked, SsODNet included |
+| `data/novel_tierA_prior_periods.csv` | 71 | prior periods found by the SsODNet / Durech 2022 / JPL check, with source and relation |
+| `data/novel_tierA.csv` | 861 | the earlier list, before the SsODNet check (kept for reference) |
 | `data/lcdb_suspect_periods.csv` | 117 | LCDB V4.0 periods contradicted by this work plus independent support (with current SBDB status) |
 | `validation/stats_final.json` | | every number quoted here, computed from the catalogue |
 | `validation/report.json`, `lit_report.json` | | calibration report, literature comparison |
@@ -276,7 +285,7 @@ On TEST asteroids where the catalogue and LCDB can both be checked:
 | Erasmus et al. | 146 | 111 | 116 |
 | McNeill et al. | 379 | 352 | 231 |
 
-## The 861 novel periods
+## The novel periods (861 before the SsODNet check, 790 after)
 
 942 tier-A asteroids have no period in LCDB V4.0 or in the six catalogues above. 81 of them have a
 published rotation period in one of these sources:
@@ -298,8 +307,12 @@ understood:
 **The list.** The remaining **861** periods are listed as novel: 667 at 2-10 h, 131 at 10-30 h and 63 at
 30-100 h. Their expected precision is about 90 %, the matched-control value.
 
-**Not checked:** SsODNet/ssoBFT, Behrend's Geneva page, ZTF period papers outside VizieR, and Pál et al.
-2020. Until those are checked, read "novel" as "no period found in the sources listed".
+**SsODNet check (2026-10-26).** A snapshot of the SsODNet ssoBFT table (22 September 2026), the ATLAS
+periods of Durech et al. 2022 and the current JPL SBDB give a prior period for 71 more of the 861; 790
+remain (617 at 2-10 h, 116 at 10-30 h, 57 at 30-100 h). See `paper/icarus/revision_notes.md`, item 5.
+
+**Not checked:** Behrend's Geneva page and ZTF period papers outside VizieR. Read "novel" as "no period
+found in the sources listed".
 
 ## Period errors
 
