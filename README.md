@@ -1,8 +1,8 @@
 # Rotation periods and spin senses of asteroids from Gaia DR3 sparse photometry
 
-Status: **released v1.0.x**, DOI [10.5281/zenodo.23638281](https://doi.org/10.5281/zenodo.23638281) (all versions). Manuscript submitted to Planetary and Space Science (revised after Icarus declined it for novelty; source in `paper/pss/`). This is version 3 of the method first piloted in
-[gaia-asteroid-periods](https://github.com/olegtropinin/gaia-asteroid-periods) (600 asteroids; RNAAS
-submission AAS82759). It now runs on every numbered asteroid with at least 25 Gaia DR3 transits.
+Status: **released v1.1.x**, DOI [10.5281/zenodo.23638281](https://doi.org/10.5281/zenodo.23638281) (all versions). Manuscript submitted to Planetary and Space Science (PSS-D-26-00341; revised after Icarus declined it for novelty; source in `paper/pss/`). This is version 3 of the method first piloted in
+[gaia-asteroid-periods](https://github.com/olegtropinin/gaia-asteroid-periods) (600 asteroids; the RNAAS
+note AAS82759 was declined on 2026-10-28). It now runs on every numbered asteroid with at least 25 Gaia DR3 transits.
 Author: Oleg Tropynin, independent researcher, Kazakhstan.
 
 ## Headline numbers
